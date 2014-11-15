@@ -14,6 +14,11 @@ public class student {
 		profPreference = null;
 		stuPreference = null;
 	}
+	
+	public student(String name, String number){
+		this.name = name;
+		this.number = number;
+	}
 
 	public student(String name, String number, String[][] grades) {
 		this.name = name;
