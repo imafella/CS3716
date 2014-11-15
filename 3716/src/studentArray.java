@@ -3,7 +3,7 @@ public class studentArray {
 	student[] studentArray;
 
 	public studentArray() {
-		studentArray = null;
+		studentArray = new student[] {};
 	}
 
 	public studentArray(student[] x) {
