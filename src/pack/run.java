@@ -34,7 +34,7 @@ public class run{
 		classList.addStudent(n);
 		student o = new student("Jack", "15");
 		classList.addStudent(o);
-		student p = new student("Jake", "16");
+		student p = new student("Jesus", "16");
 		classList.addStudent(p);
 		student q = new student("Jillian", "17");
 		classList.addStudent(q);
@@ -42,11 +42,11 @@ public class run{
 		classList.addStudent(r);
 		student s = new student("Jezzabelle", "19");
 		classList.addStudent(s);
-		student t = new student("Jesus", "20");
+		student t = new student("Jake", "20");
 		classList.addStudent(t);
 		
-		String potato = classList.toStringStudents();
-		System.out.println(potato);
-		System.out.println("test");
+		groupListing groupList = new groupListing(classList, 4);
+		groupList.displayGroupListing();
+		System.out.println("end");
 	}
 }

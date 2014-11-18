@@ -51,8 +51,8 @@ public class studentArray {
 	public String toStringStudents() {
 		String output = "";
 		for (int i = 0; i < studentArray.length; i++) {
-			output = output + "Student Name: " + studentArray[i].getName()
-					+ " Student Number: " + studentArray[i].getNumber() + "\n";
+			output = output + studentArray[i].getName()
+					+ " - #" + studentArray[i].getNumber() + "\n";
 		}
 		return output;
 	}
