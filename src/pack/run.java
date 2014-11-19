@@ -40,10 +40,7 @@ public class run{
 		classList.addStudent(q);
 		student r = new student("Julian", "18");
 		classList.addStudent(r);
-		student s = new student("Jezzabelle", "19");
-		classList.addStudent(s);
-		student t = new student("Jake", "20");
-		classList.addStudent(t);
+
 		
 		groupListing groupList = new groupListing(classList, 4);
 		groupList.displayGroupListing();
