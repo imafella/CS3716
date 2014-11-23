@@ -4,7 +4,7 @@ public class run{
 	
 	public static void main(String[] args){
 		studentArray classList = new studentArray();
-		student a = new student("Jim", "01");
+		student a = new student("Jim", "001");
 		classList.addStudent(a);
 		student b = new student("Janet", "02");
 		classList.addStudent(b);
