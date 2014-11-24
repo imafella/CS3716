@@ -1,7 +1,7 @@
 CS3716
 ======
 
-To view the planed Architexture, please view the Plans folder.
+To view the planed Architexture, please view the Plans folder. (This includes the iteration plan)
 
 To view the current java workings, please view src/pack folder.
 
