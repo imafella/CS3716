@@ -6,7 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPasswordField;
+
 import java.awt.BorderLayout;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JList;
@@ -14,8 +17,11 @@ import javax.swing.JSlider;
 import javax.swing.JScrollBar;
 import javax.swing.JSpinner;
 import javax.swing.JButton;
+import javax.swing.SpinnerNumberModel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JRadioButton;
 
 public class InstructorPref {
@@ -73,7 +79,7 @@ public class InstructorPref {
 		frmSetInstructorPreferences.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("day");
+		JLabel lblNewLabel = new JLabel("Day");
 		lblNewLabel.setBounds(136, 51, 37, 14);
 		frmSetInstructorPreferences.getContentPane().add(lblNewLabel);
 		
@@ -117,7 +123,8 @@ public class InstructorPref {
 		lblScale.setBounds(160, 243, 37, 14);
 		frmSetInstructorPreferences.getContentPane().add(lblScale);
 		
-		JSpinner spinner = new JSpinner();
+		SpinnerNumberModel spinLim= new SpinnerNumberModel(0.0, 0.0, 100.0, 1.0 );
+		JSpinner spinner = new JSpinner(spinLim);
 		spinner.setBounds(194, 240, 46, 20);
 		frmSetInstructorPreferences.getContentPane().add(spinner);
 		
@@ -133,13 +140,18 @@ public class InstructorPref {
 		lblDistributionMethod.setBounds(49, 281, 118, 14);
 		frmSetInstructorPreferences.getContentPane().add(lblDistributionMethod);
 		
+		ButtonGroup sortMethod = new ButtonGroup();
+		
 		JRadioButton rdbtnRandom = new JRadioButton("Random");
 		rdbtnRandom.setBounds(73, 302, 71, 23);
 		frmSetInstructorPreferences.getContentPane().add(rdbtnRandom);
+		sortMethod.add(rdbtnRandom);
 		
 		JRadioButton rdbtnSmartSort = new JRadioButton("Smart Sort");
 		rdbtnSmartSort.setBounds(147, 302, 109, 23);
 		frmSetInstructorPreferences.getContentPane().add(rdbtnSmartSort);
+		sortMethod.add(rdbtnSmartSort);
+		
 		
 		JButton btnReset = new JButton("Reset");
 		btnReset.setBounds(90, 346, 71, 23);
