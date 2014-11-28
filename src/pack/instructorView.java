@@ -7,13 +7,16 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JTextField;
+
 import java.awt.BorderLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.JTextPane;
+import javax.swing.SpinnerNumberModel;
 
 public class instructorView {
 
@@ -122,7 +125,8 @@ public class instructorView {
 		lblGroupSize.setBounds(38, 156, 62, 14);
 		frmInstructorView.getContentPane().add(lblGroupSize);
 		
-		JSpinner spinner = new JSpinner();
+		SpinnerNumberModel spinLim= new SpinnerNumberModel(2.0, 2.0, 100.0, 1.0 );
+		JSpinner spinner = new JSpinner(spinLim);
 		spinner.setBounds(28, 181, 41, 20);
 		frmInstructorView.getContentPane().add(spinner);
 		
