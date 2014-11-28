@@ -123,7 +123,7 @@ public class InstructorPref {
 		lblScale.setBounds(160, 243, 37, 14);
 		frmSetInstructorPreferences.getContentPane().add(lblScale);
 		
-		SpinnerNumberModel spinLim= new SpinnerNumberModel(0.0, 0.0, 100.0, 1.0 );
+		SpinnerNumberModel spinLim= new SpinnerNumberModel(0.0, 1.0, 100.0, 1.0 );
 		JSpinner spinner = new JSpinner(spinLim);
 		spinner.setBounds(194, 240, 46, 20);
 		frmSetInstructorPreferences.getContentPane().add(spinner);
