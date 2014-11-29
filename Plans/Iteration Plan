@@ -1,2 +1,11 @@
 Week1: Have Key features and base architexture working (Done)
 Week2: Start GUI and minor GUI functionality
+
+Week3: 
+  Get methods for GUI functionality.
+  
+Week4:
+  Give GUI all completed functionality.
+  Have GUI's call each other.
+  Have Random Sort & Estisort working
+  Allow Students to edit their schedules, grade prof skills, and set their own student preferences.
