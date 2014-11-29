@@ -7,8 +7,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JTextField;
+import javax.swing.DefaultListModel;
 
-import java.awt.BorderLayout;
+import java.awt.*;
+import java.awt.event.*;
 
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
@@ -23,7 +25,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.UIManager;
 import javax.swing.border.EtchedBorder;
 
-public class instructorView {
+public class instructorView implements ActionListener {
 
 	private JFrame frmInstructorView;
 	private JTextField textField_1;
@@ -67,6 +69,47 @@ public class instructorView {
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmLoadClassList = new JMenuItem("Load Class List");
+		mntmLoadClassList.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				studentArray classList = new studentArray();
+				student a = new student("Jim", "001");
+				classList.addStudent(a);
+				student b = new student("Janet", "02");
+				classList.addStudent(b);
+				student c = new student("Jocelyn", "03");
+				classList.addStudent(c);
+				student d = new student("Jackie", "04");
+				classList.addStudent(d);
+				student e = new student("John", "05");
+				classList.addStudent(e);
+				student f = new student("Jason", "06");
+				classList.addStudent(f);
+				student g = new student("Jordon", "07");
+				classList.addStudent(g);
+				student h = new student("Jon", "08");
+				classList.addStudent(h);
+				student i = new student("Jonathan", "09");
+				classList.addStudent(i);
+				student j = new student("Johnny", "10");
+				classList.addStudent(j);
+				student k = new student("Jacob", "11");
+				classList.addStudent(k);
+				student l = new student("Julia", "12");
+				classList.addStudent(l);
+				student m = new student("Jackson", "13");
+				classList.addStudent(m);
+				student n = new student("Jimbo", "14");
+				classList.addStudent(n);
+				student o = new student("Jack", "15");
+				classList.addStudent(o);
+				student p = new student("Jesus", "16");
+				classList.addStudent(p);
+				student q = new student("Jillian", "17");
+				classList.addStudent(q);
+				student r = new student("Julian", "18");
+				classList.addStudent(r);
+	         }
+		});
 		mnFile.add(mntmLoadClassList);
 		
 		JMenuItem mntmLoadGroups = new JMenuItem("Load Groups");
@@ -131,10 +174,6 @@ public class instructorView {
 		btnSet.setBounds(60, 80, 90, 20);
 		frmInstructorView.getContentPane().add(btnSet);
 		
-		JList list = new JList();
-		list.setBounds(220, 261, 160, -183);
-		frmInstructorView.getContentPane().add(list);
-		
 		JButton btnReset = new JButton("Reset");
 		btnReset.setBounds(10, 230, 100, 20);
 		frmInstructorView.getContentPane().add(btnReset);
@@ -145,6 +184,11 @@ public class instructorView {
 		
 		JButton btnEditPreferences = new JButton("Edit Preferences");
 		btnEditPreferences.setBounds(10, 110, 140, 20);
+		btnEditPreferences.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				InstructorPref.main(new String[]{});
+	         }
+		});
 		frmInstructorView.getContentPane().add(btnEditPreferences);
 		
 		JRadioButton rdbtnGroup = new JRadioButton("Group");
@@ -155,9 +199,25 @@ public class instructorView {
 		rdbtnClass.setBounds(260, 230, 80, 20);
 		frmInstructorView.getContentPane().add(rdbtnClass);
 		
-		JList list_1 = new JList();
+		//JList list = new JList();
+		//list.setBounds(220, 261, 160, -183);
+		//frmInstructorView.getContentPane().add(list);
+		
+		DefaultListModel info = new DefaultListModel();
+		JList list_1 = new JList(info);
+		info.addElement("MACEY");
 		list_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		list_1.setBounds(160, 20, 200, 200);
 		frmInstructorView.getContentPane().add(list_1);
+	}
+	public void actionPerformed(ActionEvent e){
+		//if(e.getSource() == btnEditPreferences){
+			//System.out.println("EDIT PREFS");
+		//}
+		//else if (e.getSource)
+	}
+	
+	public void dummy(){
+		System.out.println("dummy");
 	}
 }
