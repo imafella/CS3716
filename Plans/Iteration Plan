@@ -1,2 +1,8 @@
 Week1: Have Key features and base architexture working (Done)
 Week2: Start GUI and minor GUI functionality
+
+/* Esteban comment:
+- Which of the 11 properties are the key ones? You didn't identify them in your FeatureList file
+- What tests have you performed over the functionality implemented?
+- Where is the evidence of those tests?
+*/
