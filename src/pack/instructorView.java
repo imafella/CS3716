@@ -17,13 +17,16 @@ import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.JTextPane;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.JRadioButton;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.UIManager;
+import javax.swing.border.EtchedBorder;
 
 public class instructorView {
 
 	private JFrame frmInstructorView;
-	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -54,7 +57,7 @@ public class instructorView {
 	private void initialize() {
 		frmInstructorView = new JFrame();
 		frmInstructorView.setTitle("Instructor View");
-		frmInstructorView.setBounds(100, 100, 450, 445);
+		frmInstructorView.setBounds(100, 100, 400, 320);
 		frmInstructorView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -101,66 +104,60 @@ public class instructorView {
 		
 		JMenuItem mntmAbout = new JMenuItem("About");
 		mnHelp.add(mntmAbout);
+		
+		JMenuItem mntmEstiban = new JMenuItem("Estiban");
+		mnHelp.add(mntmEstiban);
 		frmInstructorView.getContentPane().setLayout(null);
 		
-		JLabel lblInstructorId = new JLabel("Instructor ID");
-		lblInstructorId.setBounds(38, 26, 89, 14);
-		frmInstructorView.getContentPane().add(lblInstructorId);
-		
-		textField = new JTextField();
-		textField.setBounds(28, 55, 99, 20);
-		frmInstructorView.getContentPane().add(textField);
-		textField.setColumns(10);
-		
 		JLabel lblCourseId = new JLabel("Course ID");
-		lblCourseId.setBounds(38, 90, 76, 14);
+		lblCourseId.setBounds(10, 10, 75, 15);
 		frmInstructorView.getContentPane().add(lblCourseId);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(28, 115, 99, 20);
+		textField_1.setBounds(10, 30, 100, 20);
 		frmInstructorView.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
 		JLabel lblGroupSize = new JLabel("Group Size");
-		lblGroupSize.setBounds(38, 156, 62, 14);
+		lblGroupSize.setBounds(10, 60, 75, 15);
 		frmInstructorView.getContentPane().add(lblGroupSize);
 		
 		SpinnerNumberModel spinLim= new SpinnerNumberModel(2.0, 2.0, 100.0, 1.0 );
 		JSpinner spinner = new JSpinner(spinLim);
-		spinner.setBounds(28, 181, 41, 20);
+		spinner.setBounds(10, 80, 40, 20);
 		frmInstructorView.getContentPane().add(spinner);
 		
 		JButton btnSet = new JButton("Set");
-		btnSet.setBounds(79, 181, 49, 23);
+		btnSet.setBounds(60, 80, 90, 20);
 		frmInstructorView.getContentPane().add(btnSet);
-		
-		JLabel lblView = new JLabel("View");
-		lblView.setBounds(279, 26, 46, 14);
-		frmInstructorView.getContentPane().add(lblView);
 		
 		JList list = new JList();
 		list.setBounds(220, 261, 160, -183);
 		frmInstructorView.getContentPane().add(list);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(197, 55, 195, 209);
-		frmInstructorView.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
-		
 		JButton btnReset = new JButton("Reset");
-		btnReset.setBounds(64, 324, 62, 23);
+		btnReset.setBounds(10, 230, 100, 20);
 		frmInstructorView.getContentPane().add(btnReset);
 		
-		JButton btnGenerateGrouping = new JButton("Generate Grouping ");
-		btnGenerateGrouping.setBounds(147, 324, 127, 23);
+		JButton btnGenerateGrouping = new JButton("Generate");
+		btnGenerateGrouping.setBounds(10, 200, 140, 20);
 		frmInstructorView.getContentPane().add(btnGenerateGrouping);
 		
-		JButton btnCancel = new JButton("Cancel");
-		btnCancel.setBounds(291, 324, 76, 23);
-		frmInstructorView.getContentPane().add(btnCancel);
-		
 		JButton btnEditPreferences = new JButton("Edit Preferences");
-		btnEditPreferences.setBounds(28, 237, 119, 23);
+		btnEditPreferences.setBounds(10, 110, 140, 20);
 		frmInstructorView.getContentPane().add(btnEditPreferences);
+		
+		JRadioButton rdbtnGroup = new JRadioButton("Group");
+		rdbtnGroup.setBounds(160, 230, 80, 20);
+		frmInstructorView.getContentPane().add(rdbtnGroup);
+		
+		JRadioButton rdbtnClass = new JRadioButton("Class");
+		rdbtnClass.setBounds(260, 230, 80, 20);
+		frmInstructorView.getContentPane().add(rdbtnClass);
+		
+		JList list_1 = new JList();
+		list_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		list_1.setBounds(160, 20, 200, 200);
+		frmInstructorView.getContentPane().add(list_1);
 	}
 }
