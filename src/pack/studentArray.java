@@ -49,6 +49,28 @@ public class studentArray {
 		return studentArray;
 	}
 	
+	public String getLowestGPA(){
+		int lowest= 0;
+		for(int i =1; i<getStudents().length-1; i++){
+			if(getStudents()[lowest].getGPA()> getStudents()[i].getGPA()){
+				lowest= i;
+			}
+		}
+		String student= getStudents()[lowest].getNumber();
+		return student;
+	}
+	
+	public String getHighestGPA(){
+		int highest= 0;
+		for(int i =1; i<getStudents().length-1; i++){
+			if(getStudents()[highest].getGPA()< getStudents()[i].getGPA()){
+				highest= i;
+			}
+		}
+		String student= getStudents()[highest].getNumber();
+		return student;
+	}
+	
 	public student getStudent(int i){
 		return getStudents()[i];
 	}

@@ -1,4 +1,7 @@
 package pack;
+
+import java.util.Random;
+
 public class groupListing {
 	studentArray[] groupListing;
 	int maxGsize;
@@ -75,9 +78,42 @@ public class groupListing {
 		}
 	}
 	
+	public int getMostEmpty(){
+		int emptiest=1; 
+		for(int i=2; i<getGroups().length-1; i++)
+			if(getGroups()[emptiest].getStudents().length>getGroups()[i].getStudents().length){
+				emptiest= i;
+			}
+		
+		return emptiest;
+	}
+	
 	public void randomSort(){
-		while(getGroups()[0].getStudents().length>0){
+		Random rand= new Random();
+			while(getGroups()[0].getStudents().length>0){
 			
+			int n = rand.nextInt(getGroups()[0].getStudents().length-1);
+			String number = getGroups()[0].getStudents()[n].getNumber();
+			moveStudent(number, 0, getMostEmpty());
+			
+			
+			
+		}
+	}
+	
+	public void EstiSort(){
+		int i = 0;
+		String student= "";
+		while(getGroups()[0].getStudents().length>0){
+			if(getMostEmpty()== i ){
+				student= getGroups()[0].getHighestGPA();
+			}
+			if(getMostEmpty()!=i){
+				student= getGroups()[0].getLowestGPA();
+			}
+				
+			
+			moveStudent(student, 0, getMostEmpty());
 		}
 	}
 }
