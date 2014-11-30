@@ -87,10 +87,7 @@ public class run{
 		
 		groupListing classProject= new groupListing(classList, fiech);
 		
-		classProject.displayGroupListing();
-		classProject.estiSort();
-		classProject.displayGroupListing();
-	
+		
 	}
 	
 }
