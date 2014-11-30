@@ -4,7 +4,11 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
@@ -77,6 +81,14 @@ public class studentView {
 		
 		JButton btnEditStudentParameters = new JButton("Edit Preferences");
 		btnEditStudentParameters.setBounds(10, 110, 140, 20);
+		btnEditStudentParameters.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		
+	    			studentPref.main(new String []{});
+	    		}
+	    		
+	    	
+	    });
 		frmStudentView.getContentPane().add(btnEditStudentParameters);
 		
 		

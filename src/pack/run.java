@@ -87,6 +87,7 @@ public class run{
 		
 		groupListing classProject= new groupListing(classList, fiech);
 		
+		loginWindow.main(new String []{});
 		
 	}
 	

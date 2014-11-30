@@ -58,10 +58,11 @@ public class student {
 		return skills;
 	}
 
-	public void setSkill(String name, int value) {
+	public void setSkill(String name, int value, int max) {
 		for (int i = 0; i < skills.length; i++) {
 			if (skills[i][0] == name) {
 				skills[i][1] = Integer.toString(value);
+				skills[i][2]= Integer.toString(max);
 			}
 
 			if ((i == skills.length - 1) && (name != skills[i][0])) {
