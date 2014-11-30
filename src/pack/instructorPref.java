@@ -105,7 +105,7 @@ public class instructorPref {
 		panel_1.add(list);
 		
 		JSpinner spinner = new JSpinner();
-		spinner.setBounds(220, 25, 29, 20);
+		spinner.setBounds(215, 25, 40, 20);
 		panel_1.add(spinner);
 		
 		JLabel lblNewLabel_3 = new JLabel("Skills");
@@ -113,11 +113,11 @@ public class instructorPref {
 		panel_1.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Skill Level");
-		lblNewLabel_4.setBounds(220, 10, 80, 15);
+		lblNewLabel_4.setBounds(215, 10, 80, 15);
 		panel_1.add(lblNewLabel_4);
 		
 		JButton btnNewButton = new JButton("Submit");
-		btnNewButton.setBounds(220, 60, 80, 20);
+		btnNewButton.setBounds(215, 60, 80, 20);
 		panel_1.add(btnNewButton);
 		
 		JPanel panel_2 = new JPanel();

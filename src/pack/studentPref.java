@@ -94,7 +94,7 @@ public class studentPref extends JFrame {
 		panel_1.add(lblClassmate);
 		
 		JLabel lblWorkWith = new JLabel("Work with?");
-		lblWorkWith.setBounds(150, 10, 80, 14);
+		lblWorkWith.setBounds(150, 10, 80, 15);
 		panel_1.add(lblWorkWith);
 		
 		JButton btnSubmit = new JButton("Submit");
