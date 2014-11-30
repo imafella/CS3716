@@ -5,6 +5,9 @@ package pack;
 public class run{
 	
 	public static void main(String[] args) {
+		
+		preferences fiech= new preferences();
+		
 		studentArray classList = new studentArray();
 		String[][] grades = {{"1710", "3.5"},{"2710", "2.1"}, {"2711", "4.0"}};
 		student a = new student("Jim", "001", grades);		
