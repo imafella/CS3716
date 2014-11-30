@@ -56,7 +56,7 @@ public class studentView {
 		frmStudentView = new JFrame();
 		frmStudentView.setTitle("Student View");
 		frmStudentView.setBounds(100, 100, 400, 300);
-		frmStudentView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmStudentView.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frmStudentView.getContentPane().setLayout(null);
 		
 		JLabel lblCourseid = new JLabel("CourseID");
