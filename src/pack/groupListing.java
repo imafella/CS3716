@@ -91,6 +91,15 @@ public class groupListing {
 		return emptiest;
 	}
 	
+	public void clearGroups(){
+		for(int i=1; i<getGroups().length; i++){
+			for(int j = 0; j< getGroups()[i].getStudents().length; j++){
+				getGroups()[0].addStudent(getGroups()[i].getStudents()[j]);
+			}
+			getGroups()[i]= new studentArray();
+		}
+	}
+	
 	public void randomSort(){
 		Random rand= new Random();
 			while(getGroups()[0].getStudents().length>0){

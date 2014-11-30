@@ -59,8 +59,9 @@ public class studentView {
 		lblCourseid.setBounds(10, 10, 75, 15);
 		frmStudentView.getContentPane().add(lblCourseid);
 		
-		textField_1 = new JTextField();
+		textField_1 = new JTextField("3716");
 		textField_1.setBounds(10, 30, 140, 20);
+		textField_1.setEditable(false);
 		frmStudentView.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -68,8 +69,9 @@ public class studentView {
 		lblStudentId.setBounds(10, 60, 75, 15);
 		frmStudentView.getContentPane().add(lblStudentId);
 		
-		textField_2 = new JTextField();
+		textField_2 = new JTextField("68");
 		textField_2.setBounds(10, 80, 140, 20);
+		textField_2.setEditable(false);
 		frmStudentView.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -77,9 +79,6 @@ public class studentView {
 		btnEditStudentParameters.setBounds(10, 110, 140, 20);
 		frmStudentView.getContentPane().add(btnEditStudentParameters);
 		
-		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(10, 210, 140, 20);
-		frmStudentView.getContentPane().add(btnSubmit);
 		
 		JList list = new JList();
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
