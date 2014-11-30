@@ -76,11 +76,11 @@ public class instructorPref {
 		panel.add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(150, 25, 40, 20);
+		comboBox_1.setBounds(130, 25, 60, 20);
 		panel.add(comboBox_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(230, 25, 50, 20);
+		comboBox_2.setBounds(210, 25, 70, 20);
 		panel.add(comboBox_2);
 		
 		JLabel lblNewLabel = new JLabel("Month");
@@ -88,12 +88,16 @@ public class instructorPref {
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Day");
-		lblNewLabel_1.setBounds(150, 10, 50, 15);
+		lblNewLabel_1.setBounds(130, 10, 50, 15);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Year");
-		lblNewLabel_2.setBounds(230, 10, 50, 15);
+		lblNewLabel_2.setBounds(210, 10, 50, 15);
 		panel.add(lblNewLabel_2);
+		
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(191, 67, 89, 23);
+		panel.add(btnSubmit);
 		
 		JPanel panel_1 = new JPanel();
 		tabbedPane.addTab("Skills", null, panel_1, null);
