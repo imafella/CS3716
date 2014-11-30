@@ -104,7 +104,8 @@ public class instructorPref {
 		list.setBounds(10, 25, 200, 100);
 		panel_1.add(list);
 		
-		JSpinner spinner = new JSpinner();
+		SpinnerNumberModel spinLim= new SpinnerNumberModel(1.0, 1.0, 100.0, 1.0 );
+		JSpinner spinner = new JSpinner(spinLim);
 		spinner.setBounds(215, 25, 40, 20);
 		panel_1.add(spinner);
 		
@@ -136,8 +137,8 @@ public class instructorPref {
 		rdbtnEstisort.setBounds(100, 25, 80, 20);
 		panel_2.add(rdbtnEstisort);
 		
-		SpinnerNumberModel spinLim= new SpinnerNumberModel(1.0, 1.0, 100.0, 1.0 );
-		
 		ButtonGroup sortMethod = new ButtonGroup();
+		sortMethod.add(rdbtnRandom);
+		sortMethod.add(rdbtnEstisort);
 	}
 }

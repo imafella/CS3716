@@ -21,7 +21,6 @@ public class studentView {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JButton btnSubmit;
-	private JButton btnReset;
 
 	/**
 	 * Launch the application.
@@ -52,7 +51,7 @@ public class studentView {
 	private void initialize() {
 		frmStudentView = new JFrame();
 		frmStudentView.setTitle("Student View");
-		frmStudentView.setBounds(100, 100, 400, 320);
+		frmStudentView.setBounds(100, 100, 400, 300);
 		frmStudentView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmStudentView.getContentPane().setLayout(null);
 		
@@ -61,7 +60,7 @@ public class studentView {
 		frmStudentView.getContentPane().add(lblCourseid);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(10, 30, 99, 20);
+		textField_1.setBounds(10, 30, 140, 20);
 		frmStudentView.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -70,7 +69,7 @@ public class studentView {
 		frmStudentView.getContentPane().add(lblStudentId);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(10, 80, 100, 20);
+		textField_2.setBounds(10, 80, 140, 20);
 		frmStudentView.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -79,25 +78,13 @@ public class studentView {
 		frmStudentView.getContentPane().add(btnEditStudentParameters);
 		
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(10, 200, 140, 20);
+		btnSubmit.setBounds(10, 210, 140, 20);
 		frmStudentView.getContentPane().add(btnSubmit);
-		
-		btnReset = new JButton("Reset");
-		btnReset.setBounds(10, 230, 100, 20);
-		frmStudentView.getContentPane().add(btnReset);
 		
 		JList list = new JList();
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		list.setBounds(160, 20, 200, 200);
+		list.setBounds(160, 10, 200, 220);
 		frmStudentView.getContentPane().add(list);
-		
-		JRadioButton rdbtnGroup = new JRadioButton("Group");
-		rdbtnGroup.setBounds(160, 230, 80, 20);
-		frmStudentView.getContentPane().add(rdbtnGroup);
-		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Class");
-		rdbtnNewRadioButton.setBounds(260, 230, 80, 20);
-		frmStudentView.getContentPane().add(rdbtnNewRadioButton);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmStudentView.setJMenuBar(menuBar);
@@ -116,27 +103,6 @@ public class studentView {
 		
 		JMenuItem mntmLoadPreferences = new JMenuItem("Load Preferences");
 		mnFile.add(mntmLoadPreferences);
-		
-		JMenu mnEdit = new JMenu("Edit");
-		menuBar.add(mnEdit);
-		
-		JMenuItem mntmEditSkills = new JMenuItem("Edit Skills");
-		mnEdit.add(mntmEditSkills);
-		
-		JMenuItem mntmEditSchedule = new JMenuItem("Edit Schedule");
-		mnEdit.add(mntmEditSchedule);
-		
-		JMenuItem mntmEditPreferredGroup = new JMenuItem("Edit Preferred Group Member");
-		mnEdit.add(mntmEditPreferredGroup);
-		
-		JMenu mnNewMenu = new JMenu("View");
-		menuBar.add(mnNewMenu);
-		
-		JMenuItem mntmViewClass = new JMenuItem("View Class");
-		mnNewMenu.add(mntmViewClass);
-		
-		JMenuItem mntmViewGroup = new JMenuItem("View Group");
-		mnNewMenu.add(mntmViewGroup);
 		
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);

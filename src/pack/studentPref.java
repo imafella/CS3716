@@ -13,6 +13,7 @@ import javax.swing.JSpinner;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JToggleButton;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
 
@@ -61,8 +62,9 @@ public class studentPref extends JFrame {
 		comboBox.setBounds(10, 25, 120, 20);
 		panel.add(comboBox);
 		
-		JSpinner spinner = new JSpinner();
-		spinner.setBounds(160, 25, 30, 20);
+		SpinnerNumberModel spinLim= new SpinnerNumberModel(1.0, 1.0, 100.0, 1.0 );
+		JSpinner spinner = new JSpinner(spinLim);
+		spinner.setBounds(160, 25, 40, 20);
 		panel.add(spinner);
 		
 		JButton btnNewButton = new JButton("Submit");
@@ -74,7 +76,7 @@ public class studentPref extends JFrame {
 		panel.add(lblSkill);
 		
 		JLabel lblSkillLevel = new JLabel("Skill Level");
-		lblSkillLevel.setBounds(160, 10, 50, 15);
+		lblSkillLevel.setBounds(160, 10, 80, 15);
 		panel.add(lblSkillLevel);
 		
 		JPanel panel_1 = new JPanel();
