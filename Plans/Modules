@@ -1,6 +1,6 @@
 Class
 ________________________________________________________
-classList.java //Loads classlist and groups
+classList.java //Loads classlist and groups.
 student.java // Student object
 studentArray.java //Array of student objects object
 schedule.java //The schedule of each student
@@ -8,11 +8,16 @@ schedule.java //The schedule of each student
 Group
 _________________________________________________________
 groupListing.java //Distributes students into groups
+preference.java // object for groupListing that set how the groups are formed.
 
 Utility
 _________________________________________________________
 run.java //Master controller
-editGroups.java //GUI for editing groups
+
+GUI
+_________________________________________________________
 instructorView.java //GUI for instructor
-studentView.java //GUI for students to edit their parameters
-groupView.java //GUI for viewing student groups as they currently are
+instructorPref.java// GUI for instructor to set how things work.
+studentView.java //GUI for students to view groups.
+studentPref.java //GUI for students to edit their parameters
+loginWindow.java //GUI for logging in
