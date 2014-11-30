@@ -2,6 +2,7 @@ package pack;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -23,6 +24,8 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.UIManager;
 import javax.swing.border.EtchedBorder;
 import java.awt.Color;
+
+import java.awt.event.*;
 
 public class instructorView {
 

@@ -14,6 +14,8 @@ import java.awt.Font;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
+import java.awt.event.*;
+
 public class loginWindow extends JFrame {
 
 	private JPanel contentPane;
@@ -37,6 +39,7 @@ public class loginWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	ButtonGroup btnGroup;
 	public loginWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 200, 200);
@@ -57,19 +60,34 @@ public class loginWindow extends JFrame {
 		
 		JRadioButton rdbtnInstructor = new JRadioButton("Instructor");
 		rdbtnInstructor.setBounds(10, 80, 100, 20);
+		rdbtnInstructor.setActionCommand("Instructor");
 		contentPane.add(rdbtnInstructor);
 		
 		JRadioButton rdbtnStudent = new JRadioButton("Student");
 		rdbtnStudent.setBounds(10, 100, 200, 20);
+		rdbtnStudent.setActionCommand("Student");
 		contentPane.add(rdbtnStudent);
 		
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.setBounds(80, 130, 100, 20);
+	    btnNewButton.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		if (getBtnGroup().getSelection().getActionCommand().equals("Instructor")){
+	    			instructorView.main(new String []{});
+	    		}
+	    		else{
+	    			studentView.main(new String []{});
+	    		}
+	    	}
+	    });
 		contentPane.add(btnNewButton);
 		
-		ButtonGroup userLogin = new ButtonGroup();
-		userLogin.add(rdbtnInstructor);
-		userLogin.add(rdbtnStudent);
+		btnGroup = new ButtonGroup();
+		btnGroup.add(rdbtnInstructor);
+		btnGroup.add(rdbtnStudent);
+	}
+	public ButtonGroup getBtnGroup(){
+		return btnGroup;
 	}
 
 }
