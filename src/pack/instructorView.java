@@ -22,6 +22,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.UIManager;
 import javax.swing.border.EtchedBorder;
+import java.awt.Color;
 
 public class instructorView {
 
@@ -57,7 +58,7 @@ public class instructorView {
 	private void initialize() {
 		frmInstructorView = new JFrame();
 		frmInstructorView.setTitle("Instructor View");
-		frmInstructorView.setBounds(100, 100, 400, 320);
+		frmInstructorView.setBounds(100, 100, 500, 300);
 		frmInstructorView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -74,27 +75,6 @@ public class instructorView {
 		
 		JMenuItem mntmSaveGroups = new JMenuItem("Save Groups");
 		mnFile.add(mntmSaveGroups);
-		
-		JMenu mnEdit = new JMenu("Edit");
-		menuBar.add(mnEdit);
-		
-		JMenuItem mntmGroups = new JMenuItem("Groups");
-		mnEdit.add(mntmGroups);
-		
-		JMenuItem mntmEmptyGroups = new JMenuItem("Empty Groups");
-		mnEdit.add(mntmEmptyGroups);
-		
-		JMenuItem mntmAdvancedOptions = new JMenuItem("Advanced Options");
-		mnEdit.add(mntmAdvancedOptions);
-		
-		JMenu mnView = new JMenu("View");
-		menuBar.add(mnView);
-		
-		JMenuItem mntmGroups_1 = new JMenuItem("Groups");
-		mnView.add(mntmGroups_1);
-		
-		JMenuItem mntmClass = new JMenuItem("Class");
-		mnView.add(mntmClass);
 		
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
@@ -114,7 +94,7 @@ public class instructorView {
 		frmInstructorView.getContentPane().add(lblCourseId);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(10, 30, 100, 20);
+		textField_1.setBounds(10, 30, 130, 20);
 		frmInstructorView.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -128,36 +108,42 @@ public class instructorView {
 		frmInstructorView.getContentPane().add(spinner);
 		
 		JButton btnSet = new JButton("Set");
-		btnSet.setBounds(60, 80, 90, 20);
+		btnSet.setBounds(60, 80, 80, 20);
 		frmInstructorView.getContentPane().add(btnSet);
 		
 		JList list = new JList();
 		list.setBounds(220, 261, 160, -183);
 		frmInstructorView.getContentPane().add(list);
 		
-		JButton btnReset = new JButton("Reset");
-		btnReset.setBounds(10, 230, 100, 20);
-		frmInstructorView.getContentPane().add(btnReset);
-		
 		JButton btnGenerateGrouping = new JButton("Generate");
-		btnGenerateGrouping.setBounds(10, 200, 140, 20);
+		btnGenerateGrouping.setForeground(new Color(0, 0, 0));
+		btnGenerateGrouping.setBackground(new Color(255, 99, 71));
+		btnGenerateGrouping.setBounds(25, 150, 100, 80);
 		frmInstructorView.getContentPane().add(btnGenerateGrouping);
 		
 		JButton btnEditPreferences = new JButton("Edit Preferences");
-		btnEditPreferences.setBounds(10, 110, 140, 20);
+		btnEditPreferences.setBounds(10, 110, 130, 20);
 		frmInstructorView.getContentPane().add(btnEditPreferences);
-		
-		JRadioButton rdbtnGroup = new JRadioButton("Group");
-		rdbtnGroup.setBounds(160, 230, 80, 20);
-		frmInstructorView.getContentPane().add(rdbtnGroup);
-		
-		JRadioButton rdbtnClass = new JRadioButton("Class");
-		rdbtnClass.setBounds(260, 230, 80, 20);
-		frmInstructorView.getContentPane().add(rdbtnClass);
 		
 		JList list_1 = new JList();
 		list_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		list_1.setBounds(160, 20, 200, 200);
+		list_1.setBounds(150, 10, 180, 220);
 		frmInstructorView.getContentPane().add(list_1);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(340, 30, 120, 20);
+		frmInstructorView.getContentPane().add(comboBox);
+		
+		JButton btnMove = new JButton("Move");
+		btnMove.setBounds(360, 60, 80, 20);
+		frmInstructorView.getContentPane().add(btnMove);
+		
+		JLabel lblNewLabel = new JLabel("Move to?");
+		lblNewLabel.setBounds(340, 10, 80, 15);
+		frmInstructorView.getContentPane().add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("Empty Groups");
+		btnNewButton.setBounds(340, 90, 120, 20);
+		frmInstructorView.getContentPane().add(btnNewButton);
 	}
 }
