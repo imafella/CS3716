@@ -3,6 +3,8 @@ package pack;
 import java.awt.EventQueue;
 
 
+
+
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -23,8 +25,8 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.UIManager;
 import javax.swing.border.EtchedBorder;
-import java.awt.Color;
 
+import java.awt.Color;
 import java.awt.event.*;
 
 public class instructorView {
@@ -62,7 +64,7 @@ public class instructorView {
 		frmInstructorView = new JFrame();
 		frmInstructorView.setTitle("Instructor View");
 		frmInstructorView.setBounds(100, 100, 500, 300);
-		frmInstructorView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmInstructorView.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmInstructorView.setJMenuBar(menuBar);
