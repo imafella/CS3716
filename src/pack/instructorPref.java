@@ -61,7 +61,7 @@ public class instructorPref {
 	private void initialize() {
 		frmSetInstructorPreferences = new JFrame();
 		frmSetInstructorPreferences.setTitle("Set Instructor Preferences");
-		frmSetInstructorPreferences.setBounds(100, 100, 320, 250);
+		frmSetInstructorPreferences.setBounds(100, 100, 320, 200);
 		frmSetInstructorPreferences.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -101,7 +101,7 @@ public class instructorPref {
 		
 		JList list = new JList();
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		list.setBounds(10, 25, 200, 150);
+		list.setBounds(10, 25, 200, 100);
 		panel_1.add(list);
 		
 		JSpinner spinner = new JSpinner();
