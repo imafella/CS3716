@@ -40,12 +40,17 @@ public class studentArray {
 			if (result.length != studentArray.length) {
 				studentArray = result;
 			}
+			
 		}
-
+		
 	}
 
 	public student[] getStudents() {
 		return studentArray;
+	}
+	
+	public student getStudent(int i){
+		return getStudents()[i];
 	}
 
 	public String toStringStudents() {

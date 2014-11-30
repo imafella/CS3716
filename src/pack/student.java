@@ -32,12 +32,26 @@ public class student {
 		return name;
 	}
 
+	
+	
 	public String getNumber() {
 		return number;
 	}
 
 	public String[][] getGrades() {
 		return grades;
+	}
+	
+	public double getGPA(){
+		double gpa= 0.0;
+		String[][] grades= getGrades();
+		for(int i = 0; i< grades.length; i++){
+			gpa =gpa+Double.parseDouble(grades[i][1]);
+		}
+		
+		gpa= gpa/grades.length;
+		
+		return gpa;
 	}
 
 	public String[][] getSkills() {
