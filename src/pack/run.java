@@ -85,6 +85,12 @@ public class run{
 		student s = new student("Bob", "68", grades);
 		classList.addStudent(s);
 		
+		groupListing classProject= new groupListing(classList, fiech);
+		
+		classProject.displayGroupListing();
+		classProject.estiSort();
+		classProject.displayGroupListing();
+	
 	}
 	
 }

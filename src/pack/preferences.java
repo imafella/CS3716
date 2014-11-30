@@ -3,7 +3,7 @@ package pack;
 public class preferences {
 	int size;
 	String[][] skills;
-	String[] date;
+	String[] date= {"", "", ""};
 	String method;
 	
 	public preferences(){

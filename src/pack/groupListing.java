@@ -4,18 +4,18 @@ import java.util.Random;
 
 public class groupListing {
 	studentArray[] groupListing;
-	int maxGsize;
-	public groupListing(studentArray studentList, int maxGsize){
+	preferences prof= new preferences();
+	public groupListing(studentArray studentList,  preferences prof){
 		studentArray[] temp = null;
-		this.maxGsize= maxGsize;
+		this.prof= prof;
 		int groups= 0;
-		if(studentList.getStudents().length%maxGsize>0){
-			 temp = new studentArray[(studentList.getStudents().length / maxGsize) + 2];
-			 groups= (studentList.getStudents().length / maxGsize) + 2;
+		if(studentList.getStudents().length%prof.getSize()>0){
+			 temp = new studentArray[(studentList.getStudents().length / prof.getSize()) + 2];
+			 groups= (studentList.getStudents().length / prof.getSize()) + 2;
 		}
-		if(studentList.getStudents().length%maxGsize==0){
-			 temp = new studentArray[(studentList.getStudents().length / maxGsize) + 1];
-			 groups= (studentList.getStudents().length / maxGsize) + 1;
+		if(studentList.getStudents().length%prof.getSize()==0){
+			 temp = new studentArray[(studentList.getStudents().length / prof.getSize()) + 1];
+			 groups= (studentList.getStudents().length / prof.getSize()) + 1;
 		}
 		
 		for (int i = 0; i < groups; i++){
@@ -30,15 +30,18 @@ public class groupListing {
 		return groupListing;
 	}
 	
-	public int getMaxGsize(){
-		return maxGsize;
-	}
 	
 	public void displayGroupListing(){
-		for (int i = 0; i < groupListing.length; i++){
-			System.out.println("Group " + (i + 1));
+		for (int i = 0; i < getGroups().length; i++){
+			
+			if(i!=0){System.out.println("Group " + (i));}
+			if(i==0){System.out.println("Unsorted Students");}
 			System.out.println(groupListing[i].toStringStudents());
 		}
+	}
+	
+	public preferences getPref(){
+		return prof;
 	}
 	
 	public boolean checkStudent(String Number, int initialGroup){
@@ -54,7 +57,7 @@ public class groupListing {
 	}
 	
 	public boolean sizeCheck(int targetGroup){
-		if(getGroups()[targetGroup].getStudents().length-1<getMaxGsize()){
+		if(getGroups()[targetGroup].getStudents().length-1<prof.getSize()){
 			return true;
 		}
 		
@@ -80,7 +83,7 @@ public class groupListing {
 	
 	public int getMostEmpty(){
 		int emptiest=1; 
-		for(int i=2; i<getGroups().length-1; i++)
+		for(int i=2; i<getGroups().length; i++)
 			if(getGroups()[emptiest].getStudents().length>getGroups()[i].getStudents().length){
 				emptiest= i;
 			}
@@ -92,7 +95,7 @@ public class groupListing {
 		Random rand= new Random();
 			while(getGroups()[0].getStudents().length>0){
 			
-			int n = rand.nextInt(getGroups()[0].getStudents().length-1);
+			int n = rand.nextInt(getGroups()[0].getStudents().length);
 			String number = getGroups()[0].getStudents()[n].getNumber();
 			moveStudent(number, 0, getMostEmpty());
 			
@@ -101,7 +104,7 @@ public class groupListing {
 		}
 	}
 	
-	public void EstiSort(){
+	public void estiSort(){
 		int i = 0;
 		String student= "";
 		while(getGroups()[0].getStudents().length>0){

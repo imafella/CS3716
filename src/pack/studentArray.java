@@ -49,6 +49,7 @@ public class studentArray {
 		return studentArray;
 	}
 	
+	
 	public String getLowestGPA(){
 		int lowest= 0;
 		for(int i =1; i<getStudents().length-1; i++){
