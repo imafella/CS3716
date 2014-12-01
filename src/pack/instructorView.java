@@ -1,5 +1,9 @@
 package pack;
 
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
 import java.awt.EventQueue;
 
 import javax.swing.DefaultListModel;
@@ -68,6 +72,7 @@ public class instructorView {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	groupListing groupList;
 	DefaultListModel listModel;
 	private void initialize() {
 		listModel = new DefaultListModel();
@@ -166,6 +171,7 @@ public class instructorView {
 	    		classList.addStudent(s);
 	    		
 	    		groupListing classProject= new groupListing(classList, fiech);
+	    		setGroupListing(classProject);
 	    		
 	    		for(int t = 0; t < classList.getStudents().length; t++){
 	    			listModel.addElement(classList.getStudents()[t].getName());
@@ -256,10 +262,25 @@ public class instructorView {
 		
 		JButton btnNewButton = new JButton("Empty Groups");
 		btnNewButton.setBounds(340, 190, 120, 20);
+		btnNewButton.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+
+                int dialogButton = JOptionPane.YES_NO_OPTION;
+                int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to empty the current group listing?","Warning",dialogButton);
+                if(dialogResult == JOptionPane.YES_OPTION){
+                	System.out.println("YES");
+                }
+	    	}
+		});
 		frmInstructorView.getContentPane().add(btnNewButton);
 		
 		JRadioButton rdbtnGroup = new JRadioButton("Group");
 		rdbtnGroup.setBounds(150, 210, 80, 20);
+		rdbtnGroup.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		
+	    	}
+		});
 		frmInstructorView.getContentPane().add(rdbtnGroup);
 		
 		JRadioButton rdbtnClass = new JRadioButton("Class");
@@ -269,5 +290,11 @@ public class instructorView {
 		ButtonGroup viewer = new ButtonGroup();
 		viewer.add(rdbtnGroup);
 		viewer.add(rdbtnClass);
+	}
+	public void setGroupListing(groupListing groupList){
+		this.groupList = groupList;
+	}
+	public groupListing getGroupListing(){
+		return groupList;
 	}
 }
