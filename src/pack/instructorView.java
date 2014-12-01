@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 
 
 
+
+
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -129,7 +131,11 @@ public class instructorView {
 		JButton btnEditPreferences = new JButton("Edit Preferences");
 		btnEditPreferences.setBounds(10, 110, 130, 20);
 		frmInstructorView.getContentPane().add(btnEditPreferences);
-		
+		btnEditPreferences.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				instructorPref.main(new String []{});
+			}
+		});
 		JList list_1 = new JList();
 		list_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		list_1.setBounds(150, 10, 180, 220);

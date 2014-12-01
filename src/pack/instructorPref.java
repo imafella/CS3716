@@ -62,7 +62,7 @@ public class instructorPref {
 		frmSetInstructorPreferences = new JFrame();
 		frmSetInstructorPreferences.setTitle("Set Instructor Preferences");
 		frmSetInstructorPreferences.setBounds(100, 100, 320, 200);
-		frmSetInstructorPreferences.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmSetInstructorPreferences.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		frmSetInstructorPreferences.getContentPane().add(tabbedPane, BorderLayout.CENTER);
