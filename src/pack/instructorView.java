@@ -1,6 +1,7 @@
 package pack;
 
 import java.awt.EventQueue;
+
 import javax.swing.DefaultListModel;
 
 
@@ -16,6 +17,7 @@ import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JButton;
@@ -31,6 +33,7 @@ import javax.swing.border.EtchedBorder;
 
 import java.awt.Color;
 import java.awt.event.*;
+
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
@@ -233,7 +236,7 @@ public class instructorView {
 		});
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(150, 10, 180, 220);
+		scrollPane.setBounds(150, 10, 180, 200);
 		frmInstructorView.getContentPane().add(scrollPane);
 		JList list_1 = new JList(listModel);
 		scrollPane.setViewportView(list_1);
@@ -252,7 +255,19 @@ public class instructorView {
 		frmInstructorView.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Empty Groups");
-		btnNewButton.setBounds(340, 90, 120, 20);
+		btnNewButton.setBounds(340, 190, 120, 20);
 		frmInstructorView.getContentPane().add(btnNewButton);
+		
+		JRadioButton rdbtnGroup = new JRadioButton("Group");
+		rdbtnGroup.setBounds(150, 210, 80, 20);
+		frmInstructorView.getContentPane().add(rdbtnGroup);
+		
+		JRadioButton rdbtnClass = new JRadioButton("Class");
+		rdbtnClass.setBounds(250, 210, 80, 20);
+		frmInstructorView.getContentPane().add(rdbtnClass);
+	
+		ButtonGroup viewer = new ButtonGroup();
+		viewer.add(rdbtnGroup);
+		viewer.add(rdbtnClass);
 	}
 }
