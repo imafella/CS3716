@@ -67,6 +67,7 @@ public class instructorView {
 	 */
 	DefaultListModel listModel;
 	private void initialize() {
+		listModel = new DefaultListModel();
 		frmInstructorView = new JFrame();
 		frmInstructorView.setTitle("Instructor View");
 		frmInstructorView.setBounds(100, 100, 500, 300);
@@ -81,7 +82,7 @@ public class instructorView {
 		JMenuItem mntmLoadClassList = new JMenuItem("Load Class List");
 		mntmLoadClassList.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		//if (getBtnGroup().getSelection().getActionCommand().equals("Instructor")){
+	    		textField_1.setText("COMP 3716");
 	    		preferences fiech= new preferences();
 	    		
 	    		studentArray classList = new studentArray();
@@ -195,6 +196,7 @@ public class instructorView {
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(10, 30, 130, 20);
+		textField_1.setEditable(false);
 		frmInstructorView.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -229,7 +231,6 @@ public class instructorView {
 				instructorPref.main(new String []{});
 			}
 		});
-		listModel = new DefaultListModel();
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(150, 10, 180, 220);
