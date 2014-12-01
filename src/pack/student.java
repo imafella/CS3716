@@ -14,17 +14,25 @@ public class student {
 		grades = null;
 		profPreference = null;
 		stuPreference = null;
+		schedule= new schedule();
 	}
 	
 	public student(String name, String number){
 		this.name = name;
 		this.number = number;
+		grades = null;
+		profPreference = null;
+		stuPreference = null;
+		schedule= new schedule();
 	}
 
 	public student(String name, String number, String[][] grades) {
 		this.name = name;
 		this.number = number;
 		this.grades = grades;
+		profPreference = null;
+		stuPreference = null;
+		schedule= new schedule();
 
 	}
 
