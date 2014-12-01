@@ -73,9 +73,14 @@ public class instructorView {
 	 * Initialize the contents of the frame.
 	 */
 	groupListing groupList;
+	JList list_1;
 	DefaultListModel listModel;
+	SpinnerNumberModel spinLim;
+	DefaultComboBoxModel comboModel;
 	private void initialize() {
 		listModel = new DefaultListModel();
+		spinLim = new SpinnerNumberModel(2.0, 2.0, 100.0, 1.0 );
+		comboModel = new DefaultComboBoxModel();
 		frmInstructorView = new JFrame();
 		frmInstructorView.setTitle("Instructor View");
 		frmInstructorView.setBounds(100, 100, 500, 300);
@@ -95,7 +100,7 @@ public class instructorView {
 	    		
 	    		studentArray classList = new studentArray();
 	    		String[][] grades = {{"1710", "3.5"},{"2710", "2.1"}, {"2711", "4.0"}};
-	    		student a = new student("Jim", "001", grades);		
+	    		student a = new student("Jim", "01", grades);		
 	    		classList.addStudent(a);
 	    		
 	    		grades[0][1]="1.1"; grades[1][1]="3.4"; grades[2][1]="4.0";
@@ -167,14 +172,18 @@ public class instructorView {
 	    		classList.addStudent(r);
 	    		
 	    		grades[0][1]="1.0"; grades[1][1]="1.0"; grades[2][1]="1.0";
-	    		student s = new student("Bob", "68", grades);
+	    		student s = new student("Bob", "19", grades);
 	    		classList.addStudent(s);
 	    		
 	    		groupListing classProject= new groupListing(classList, fiech);
 	    		setGroupListing(classProject);
 	    		
 	    		for(int t = 0; t < classList.getStudents().length; t++){
-	    			listModel.addElement(classList.getStudents()[t].getName());
+	    			listModel.addElement(classList.getStudents()[t].getNumber() + " " + classList.getStudents()[t].getName());
+	    		}
+	    		
+	    		for (int t = 0; t < 11; t++){
+	    			comboModel.addElement("Group " + t);
 	    		}
 	    	}
 	    });
@@ -213,13 +222,21 @@ public class instructorView {
 		lblGroupSize.setBounds(10, 60, 75, 15);
 		frmInstructorView.getContentPane().add(lblGroupSize);
 		
-		SpinnerNumberModel spinLim= new SpinnerNumberModel(2.0, 2.0, 100.0, 1.0 );
 		JSpinner spinner = new JSpinner(spinLim);
 		spinner.setBounds(10, 80, 40, 20);
 		frmInstructorView.getContentPane().add(spinner);
 		
 		JButton btnSet = new JButton("Set");
 		btnSet.setBounds(60, 80, 80, 20);
+		btnSet.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		double v = (double) spinLim.getValue();
+	    		int intV = (int) v;
+	    		groupListing g = getGroupListing();
+	    		g.getPref().setSize(intV);
+	    		setGroupListing(g);
+	    	}
+		});
 		frmInstructorView.getContentPane().add(btnSet);
 		
 		JList list = new JList();
@@ -244,16 +261,22 @@ public class instructorView {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(150, 10, 180, 200);
 		frmInstructorView.getContentPane().add(scrollPane);
-		JList list_1 = new JList(listModel);
+		
+		list_1 = new JList(listModel);
 		scrollPane.setViewportView(list_1);
 		list_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox comboBox = new JComboBox(comboModel);
 		comboBox.setBounds(340, 30, 120, 20);
 		frmInstructorView.getContentPane().add(comboBox);
 		
 		JButton btnMove = new JButton("Move");
 		btnMove.setBounds(360, 60, 80, 20);
+		btnMove.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		System.out.println(list_1.getSelectedValue());
+	    	}
+		});
 		frmInstructorView.getContentPane().add(btnMove);
 		
 		JLabel lblNewLabel = new JLabel("Move to?");
@@ -278,13 +301,28 @@ public class instructorView {
 		rdbtnGroup.setBounds(150, 210, 80, 20);
 		rdbtnGroup.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		
+	    		listModel.clear();
+	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+	    			listModel.addElement(" ");
+	    			listModel.addElement("Group: " + i);
+	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+	    				listModel.addElement(getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    		}
 	    	}
 		});
 		frmInstructorView.getContentPane().add(rdbtnGroup);
 		
 		JRadioButton rdbtnClass = new JRadioButton("Class");
 		rdbtnClass.setBounds(250, 210, 80, 20);
+		rdbtnClass.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		listModel.clear();
+	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+	    				listModel.addElement(getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    		}
+	    	}
+		});
 		frmInstructorView.getContentPane().add(rdbtnClass);
 	
 		ButtonGroup viewer = new ButtonGroup();
