@@ -6,7 +6,11 @@ public class schedule {
 
 	public schedule() {
 		schedule = new boolean[7][24];
-		Arrays.fill(schedule, Boolean.TRUE);
+		for(int i =0 ; i<7; i++){
+			for(int j =0 ; j<24; j++){
+				schedule[i][j]= true;
+			}
+		}
 	}
 
 	public String toString() {

@@ -85,7 +85,7 @@ public class run{
 		student s = new student("Bob", "68", grades);
 		classList.addStudent(s);
 		
-		groupListing classProject= new groupListing(classList, fiech);
+		
 		
 		loginWindow.main(new String []{});
 		
