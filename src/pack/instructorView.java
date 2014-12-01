@@ -31,6 +31,8 @@ import javax.swing.border.EtchedBorder;
 
 import java.awt.Color;
 import java.awt.event.*;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class instructorView {
 
@@ -228,10 +230,13 @@ public class instructorView {
 			}
 		});
 		listModel = new DefaultListModel();
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(150, 10, 180, 220);
+		frmInstructorView.getContentPane().add(scrollPane);
 		JList list_1 = new JList(listModel);
+		scrollPane.setViewportView(list_1);
 		list_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		list_1.setBounds(150, 10, 180, 220);
-		frmInstructorView.getContentPane().add(list_1);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(340, 30, 120, 20);

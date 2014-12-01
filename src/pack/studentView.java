@@ -18,6 +18,7 @@ import javax.swing.JList;
 import javax.swing.border.BevelBorder;
 import javax.swing.JRadioButton;
 import javax.swing.border.EtchedBorder;
+import javax.swing.JScrollPane;
 
 public class studentView {
 
@@ -91,11 +92,14 @@ public class studentView {
 	    });
 		frmStudentView.getContentPane().add(btnEditStudentParameters);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(160, 10, 200, 220);
+		frmStudentView.getContentPane().add(scrollPane);
+		
 		
 		JList list = new JList();
+		scrollPane.setViewportView(list);
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		list.setBounds(160, 10, 200, 220);
-		frmStudentView.getContentPane().add(list);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmStudentView.setJMenuBar(menuBar);

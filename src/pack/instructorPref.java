@@ -27,6 +27,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.border.EtchedBorder;
+import javax.swing.JScrollPane;
 
 public class instructorPref {
 
@@ -103,10 +104,13 @@ public class instructorPref {
 		tabbedPane.addTab("Skills", null, panel_1, null);
 		panel_1.setLayout(null);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 25, 200, 100);
+		panel_1.add(scrollPane);
+		
 		JList list = new JList();
+		scrollPane.setViewportView(list);
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		list.setBounds(10, 25, 200, 100);
-		panel_1.add(list);
 		
 		SpinnerNumberModel spinLim= new SpinnerNumberModel(1.0, 1.0, 100.0, 1.0 );
 		JSpinner spinner = new JSpinner(spinLim);
