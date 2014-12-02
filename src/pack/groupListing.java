@@ -66,7 +66,7 @@ public class groupListing {
 	}
 	
 	public boolean sizeCheck(int targetGroup){
-		if(getGroups()[targetGroup].getStudents().length-1<prof.getSize()){
+		if(getGroups()[targetGroup].getStudents().length-1<prof.getSize()-1){
 			return true;
 		}
 		
