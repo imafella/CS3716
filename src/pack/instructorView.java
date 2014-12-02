@@ -254,6 +254,23 @@ public class instructorView {
 		btnGenerateGrouping.setBackground(new Color(255, 99, 71));
 		btnGenerateGrouping.setBounds(25, 150, 100, 80);
 		frmInstructorView.getContentPane().add(btnGenerateGrouping);
+		btnGenerateGrouping.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if(getGroupListing().getPref().getSortMethod().equals("RANDOM"))
+					getGroupListing().randomSort();
+				if(getGroupListing().getPref().getSortMethod().equals("ESTESORT"))
+					getGroupListing().esteSort();
+				
+				listModel.clear();
+	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+	    			listModel.addElement(" ");
+	    			listModel.addElement("Group: " + i);
+	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    		}
+			}	
+		});
 		
 		JButton btnEditPreferences = new JButton("Edit Preferences");
 		btnEditPreferences.setBounds(10, 110, 130, 20);

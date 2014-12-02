@@ -86,9 +86,7 @@ public class groupListing {
 					getGroups()[targetGroup].addStudent(x);
 					
 				}
-			}
-			
-			
+			}	
 		}
 	}
 	
@@ -131,23 +129,18 @@ public class groupListing {
 			String number = getGroups()[0].getStudents()[n].getNumber();
 			moveStudent(number, 0, getMostEmpty());
 			
-			
-			
 		}
 	}
 	
 	public void esteSort(){
-		int i = 0;
 		String student= "";
-		while(getGroups()[0].getStudents().length>0){
-			if(getMostEmpty()== i ){
-				student= getGroups()[0].getHighestGPA();
+		while(getGroups()[0].getStudents().length > 0){
+			if(getMostEmpty() == 0 ){
+				student = getGroups()[0].getHighestGPA();
 			}
-			if(getMostEmpty()!=i){
-				student= getGroups()[0].getLowestGPA();
+			if(getMostEmpty() != 0){
+				student = getGroups()[0].getLowestGPA();
 			}
-				
-			
 			moveStudent(student, 0, getMostEmpty());
 		}
 	}

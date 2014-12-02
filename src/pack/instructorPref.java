@@ -60,6 +60,7 @@ public class instructorPref {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	
 	private void initialize() {
 		frmSetInstructorPreferences = new JFrame();
 		frmSetInstructorPreferences.setTitle("Set Instructor Preferences");
@@ -145,13 +146,23 @@ public class instructorPref {
 		rdbtnRandom.setSelected(true);
 		rdbtnRandom.setBounds(10, 25, 80, 20);
 		panel_2.add(rdbtnRandom);
+		rdbtnRandom.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		instructorView.getGroupListing().getPref().setSortMethod("random");
+	    	}
+		});
 		
-		JRadioButton rdbtnEstisort = new JRadioButton("Estisort");
-		rdbtnEstisort.setBounds(100, 25, 80, 20);
-		panel_2.add(rdbtnEstisort);
+		JRadioButton rdbtnEstesort = new JRadioButton("Estesort");
+		rdbtnEstesort.setBounds(100, 25, 80, 20);
+		panel_2.add(rdbtnEstesort);
+		rdbtnEstesort.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		instructorView.getGroupListing().getPref().setSortMethod("estesort");
+	    	}
+		});
 		
 		ButtonGroup sortMethod = new ButtonGroup();
 		sortMethod.add(rdbtnRandom);
-		sortMethod.add(rdbtnEstisort);
+		sortMethod.add(rdbtnEstesort);
 	}
 }
