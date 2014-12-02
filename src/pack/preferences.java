@@ -39,8 +39,8 @@ public class preferences {
 	}
 	
 	public void addSkill(String skill, int scaleMax){
-		skills[skills.length-1][0]= skill;
-		skills[skills.length-1][1]= Integer.toString(scaleMax);
+		skills[skills.length][0]= skill;
+		skills[skills.length][1]= Integer.toString(scaleMax);
 	}
 	
 	public String[][] getSkills(){
