@@ -141,8 +141,8 @@ public class studentView {
 		JMenuItem mntmAbout = new JMenuItem("About");
 		mnHelp.add(mntmAbout);
 		
-		JMenuItem mntmEstiban = new JMenuItem("Estiban");
-		mnHelp.add(mntmEstiban);
+		JMenuItem mntmEsteban = new JMenuItem("Esteban");
+		mnHelp.add(mntmEsteban);
 	}
 	public void setGroupListing(groupListing groupList){
 		this.groupList = groupList;
