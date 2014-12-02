@@ -59,6 +59,7 @@ public class studentView {
 	DefaultListModel listModel;
 	JRadioButton rdbtnGroup;
 	JRadioButton rdbtnClass;
+	private JTextField textField;
 	private void initialize() {
 		this.groupList = studentPref.getGroupListing();
 		listModel = new DefaultListModel();
@@ -114,7 +115,7 @@ public class studentView {
 		}
 		
 		rdbtnGroup = new JRadioButton("Group");
-		rdbtnGroup.setBounds(150, 210, 80, 20);
+		rdbtnGroup.setBounds(170, 210, 80, 20);
 		rdbtnGroup.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		listModel.clear();
@@ -130,7 +131,7 @@ public class studentView {
 		
 		rdbtnClass = new JRadioButton("Class");
 		rdbtnClass.setSelected(true);
-		rdbtnClass.setBounds(250, 210, 80, 20);
+		rdbtnClass.setBounds(270, 210, 80, 20);
 		rdbtnClass.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		listModel.clear();
@@ -145,6 +146,16 @@ public class studentView {
 		ButtonGroup viewer = new ButtonGroup();
 		viewer.add(rdbtnGroup);
 		viewer.add(rdbtnClass);
+		
+		textField = new JTextField();
+		textField.setEditable(false);
+		textField.setBounds(10, 210, 120, 20);
+		frmStudentView.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblDeadline = new JLabel("Deadline Date");
+		lblDeadline.setBounds(10, 195, 80, 15);
+		frmStudentView.getContentPane().add(lblDeadline);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmStudentView.setJMenuBar(menuBar);
