@@ -79,7 +79,7 @@ public class groupListing {
 			student x;
 			student[] initial =getGroups()[initialGroup].getStudents();
 			for(int i=0; i<size; i++){
-				if(initial[i].getNumber()== number){
+				if(initial[i].getNumber().equals(number)){
 					x= getGroups()[initialGroup].getStudents()[i];
 					getGroups()[initialGroup].deleteStudent(number);
 					x.setGroupNum(targetGroup);
