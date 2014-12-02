@@ -93,6 +93,16 @@ public class groupListing {
 	}
 	
 	
+	public int findStudent(String stuNum){
+		for(int i =0; i<getGroups().length; i++){
+			for(int j = 0; j<getGroups()[i].getStudents().length; j++){
+				if(getGroups()[i].getStudents()[j].getNumber()==stuNum){
+					return getGroups()[i].getStudents()[j].getGroupNum();
+				}
+			}
+		}
+		return -1;
+	}
 	
 	public int getMostEmpty(){
 		int emptiest=1; 
