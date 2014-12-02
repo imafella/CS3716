@@ -102,80 +102,99 @@ public class instructorView {
 	    		preferences fiech= new preferences();
 	    		
 	    		studentArray classList = new studentArray();
-	    		String[][] grades = {{"1710", "3.5"},{"2710", "2.1"}, {"2711", "4.0"}};
-	    		student a = new student("Jim", "01", grades);		
+	    		String[][] g1 = {{"1710", "3.5"},{"2710", "2.1"}, {"2711", "4.0"}};
+	    		student a = new student("Jim", "01");
+	    		a.setGrades(g1);
 	    		classList.addStudent(a);
 	    		
-	    		grades[0][1]="1.1"; grades[1][1]="3.4"; grades[2][1]="4.0";
-	    		student b = new student("Janet", "02", grades);
+	    		String[][] g2 = {{"1710", "1.1"},{"2710", "3.4"},{"2711", "4.0"}};
+	    		student b = new student("Janet", "02");
+	    		b.setGrades(g2);
 	    		classList.addStudent(b);
 	    		
-	    		grades[0][1]="3.6"; grades[1][1]="4.0"; grades[2][1]="1.4";
-	    		student c = new student("Jocelyn", "03", grades);
+	    		String[][] g3 = {{"1710", "3.6"},{"2710", "4.0"},{"2711", "1.4"}};
+	    		student c = new student("Jocelyn", "03");
+	    		c.setGrades(g3);
 	    		classList.addStudent(c);
 	    		
-	    		grades[0][1]="2.0"; grades[1][1]="1.4"; grades[2][1]="1.8";
-	    		student d = new student("Jackie", "04", grades);
+	    		String[][] g4 = {{"1710", "2.0"},{"2710", "1.4"},{"2711", "1.8"}};
+	    		student d = new student("Jackie", "04");
+	    		d.setGrades(g4);
 	    		classList.addStudent(d);
 	    		
-	    		grades[0][1]="3.1"; grades[1][1]="1.9"; grades[2][1]="2.7";
-	    		student es = new student("John", "05", grades);
+	    		String[][] g5 = {{"1710", "3.1"},{"2710", "1.9"},{"2711", "2.7"}};
+	    		student es = new student("John", "05");
+	    		es.setGrades(g5);
 	    		classList.addStudent(es);
 	    		
-	    		grades[0][1]="2.6"; grades[1][1]="1.6"; grades[2][1]="0.5";
-	    		student f = new student("Jason", "06", grades);
+	    		String[][] g6 = {{"1710", "2.6"},{"2710", "1.6"},{"2711", "0.5"}};
+	    		student f = new student("Jason", "06");
+	    		f.setGrades(g6);
 	    		classList.addStudent(f);
 	    		
-	    		grades[0][1]="4.0"; grades[1][1]="4.0"; grades[2][1]="3.9";
-	    		student g = new student("Jordon", "07", grades);
+	    		String[][] g7 = {{"1710", "4.0"},{"2710", "4.0"},{"2711", "3.9"}};
+	    		student g = new student("Jordon", "07");
+	    		g.setGrades(g7);
 	    		classList.addStudent(g);
 	    		
-	    		grades[0][1]="3.3"; grades[1][1]="3.1"; grades[2][1]="2.8";
-	    		student h = new student("Jon", "08", grades);
+	    		String[][] g8 = {{"1710", "3.3"},{"2710", "3.1"},{"2711", "2.8"}};
+	    		student h = new student("Jon", "08");
+	    		h.setGrades(g8);
 	    		classList.addStudent(h);
 	    		
-	    		grades[0][1]="1.9"; grades[1][1]="2.1"; grades[2][1]="2.0";
-	    		student i = new student("Jonathan", "09", grades);
+	    		String[][] g9 = {{"1710", "1.9"},{"2710", "2.1"},{"2711", "2.0"}};
+	    		student i = new student("Jonathan", "09");
+	    		i.setGrades(g9);
 	    		classList.addStudent(i);
 	    		
-	    		grades[0][1]="2.5"; grades[1][1]="2.7"; grades[2][1]="1.5";
-	    		student j = new student("Johnny", "10", grades);
+	    		String[][] g10 = {{"1710", "2.5"},{"2710", "2.7"},{"2711", "1.5"}};
+	    		student j = new student("Johnny", "10");
+	    		j.setGrades(g10);
 	    		classList.addStudent(j);
 	    		
-	    		grades[0][1]="1.1"; grades[1][1]="1.2"; grades[2][1]="1.1";
-	    		student k = new student("Jacob", "11", grades);
+	    		String[][] g11 = {{"1710", "1.1"},{"2710", "1.2"},{"2711", "1.1"}};
+	    		student k = new student("Jacob", "11");
+	    		k.setGrades(g11);
 	    		classList.addStudent(k);
 	    		
-	    		grades[0][1]="3.5"; grades[1][1]="3.4"; grades[2][1]="2.7";
-	    		student l = new student("Julia", "12", grades);
+	    		String[][] g12 = {{"1710", "3.5"},{"2710", "3.4"},{"2711", "2.7"}};
+	    		student l = new student("Julia", "12");
+	    		l.setGrades(g12);
 	    		classList.addStudent(l);
 	    		
-	    		grades[0][1]="3.7"; grades[1][1]="3.8"; grades[2][1]="3.5";
-	    		student m = new student("Jackson", "13", grades);
+	    		String[][] g13 = {{"1710", "3.7"},{"2710", "3.8"},{"2711", "3.5"}};
+	    		student m = new student("Jackson", "13");
+	    		m.setGrades(g13);
 	    		classList.addStudent(m);
 	    		
-	    		grades[0][1]="2.4"; grades[1][1]="3.4"; grades[2][1]="4.0";
-	    		student n = new student("Jimbo", "14", grades);
+	    		String[][] g14 = {{"1710", "2.4"},{"2710", "3.4"},{"2711", "4.0"}};
+	    		student n = new student("Jimbo", "14");
+	    		n.setGrades(g14);
 	    		classList.addStudent(n);
 	    		
-	    		grades[0][1]="4.0"; grades[1][1]="3.9"; grades[2][1]="4.0";
-	    		student o = new student("Jack", "15", grades);
+	    		String[][] g15 = {{"1710", "4.0"},{"2710", "3.9"},{"2711", "4.0"}};
+	    		student o = new student("Jack", "15");
+	    		o.setGrades(g15);
 	    		classList.addStudent(o);
 	    		
-	    		grades[0][1]="4.0"; grades[1][1]="4.0"; grades[2][1]="4.0";
-	    		student p = new student("Jesus", "16", grades);
+	    		String[][] g16 = {{"1710", "4.0"},{"2710", "4.0"},{"2711", "4.0"}};
+	    		student p = new student("Jesus", "16");
+	    		p.setGrades(g16);
 	    		classList.addStudent(p);
 	    		
-	    		grades[0][1]="2.0"; grades[1][1]="1.4"; grades[2][1]="1.5";
-	    		student q = new student("Jillian", "17", grades);
+	    		String[][] g17 = {{"1710", "2.0"},{"2710", "1.4"},{"2711", "1.5"}};
+	    		student q = new student("Jillian", "17");
+	    		q.setGrades(g17);
 	    		classList.addStudent(q);
 	    		
-	    		grades[0][1]="3.0"; grades[1][1]="3.0"; grades[2][1]="3.0";
-	    		student r = new student("Julian", "18", grades);
+	    		String[][] g18 = {{"1710", "3.0"},{"2710", "3.0"},{"2711", "3.0"}};
+	    		student r = new student("Julian", "18");
+	    		r.setGrades(g18);
 	    		classList.addStudent(r);
 	    		
-	    		grades[0][1]="1.0"; grades[1][1]="1.0"; grades[2][1]="1.0";
-	    		student s = new student("Bob", "19", grades);
+	    		String[][] g19 = {{"1710", "1.0"},{"2710", "1.0"},{"2711", "1.0"}};
+	    		student s = new student("Bob", "19");
+	    		s.setGrades(g19);
 	    		classList.addStudent(s);
 	    		
 	    		groupListing classProject= new groupListing(classList, fiech);
