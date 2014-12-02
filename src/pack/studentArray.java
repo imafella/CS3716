@@ -4,7 +4,7 @@ public class studentArray {
 	student[] studentArray;
 
 	public studentArray() {
-		studentArray = new student[] {};
+		studentArray = new student[0] ;
 	}
 
 	public studentArray(student[] x) {
