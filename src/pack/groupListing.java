@@ -5,8 +5,10 @@ import java.util.Random;
 public class groupListing {
 	studentArray[] groupListing;
 	preferences prof= new preferences();
+	studentArray classList;
 	public groupListing(studentArray studentList,  preferences prof){
 		studentArray[] temp = null;
+		classList= studentList;
 		this.prof= prof;
 		int groups= 0;
 		if(studentList.getStudents().length%prof.getSize()>0){
@@ -30,6 +32,13 @@ public class groupListing {
 		return groupListing;
 	}
 	
+	public studentArray getClassList(){
+		return classList;
+	}
+	
+	public void setClassList(studentArray x){
+		classList= x;
+	}
 	
 	public void displayGroupListing(){
 		for (int i = 0; i < getGroups().length; i++){
@@ -80,6 +89,8 @@ public class groupListing {
 			
 		}
 	}
+	
+	
 	
 	public int getMostEmpty(){
 		int emptiest=1; 
