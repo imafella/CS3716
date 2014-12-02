@@ -150,6 +150,11 @@ public class studentView {
 		textField = new JTextField();
 		textField.setEditable(false);
 		textField.setBounds(10, 210, 120, 20);
+		String date = "";
+		for (int i = 0; i < 3; i++){
+			date = date + groupList.getPref().getDate()[i] + " ";
+		}
+		textField.setText(date);
 		frmStudentView.getContentPane().add(textField);
 		textField.setColumns(10);
 		

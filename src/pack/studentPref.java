@@ -45,11 +45,13 @@ public class studentPref extends JFrame {
 	static groupListing groupList;
 	DefaultComboBoxModel comboModel1;
 	DefaultComboBoxModel comboModel2;
+	DefaultComboBoxModel comboModel3;
 	public studentPref() {
 		groupList = studentView.getGroupListing();
 		
 		comboModel1 = new DefaultComboBoxModel();
 		comboModel2 = new DefaultComboBoxModel();
+		comboModel3 = new DefaultComboBoxModel();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 350, 150);
 		contentPane = new JPanel();
@@ -66,7 +68,12 @@ public class studentPref extends JFrame {
 		tabbedPane.addTab("Skills", null, panel, null);
 		panel.setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
+		if (instructorView.getGroupListing().getPref().getSkills() != null){
+			for (int i = 0; i < instructorView.getGroupListing().getPref().getSkills().length; i++){
+				comboModel3.addElement(instructorView.getGroupListing().getPref().getSkills()[i]);
+			}
+		}
+		JComboBox comboBox = new JComboBox(comboModel3);
 		comboBox.setBounds(10, 25, 120, 20);
 		panel.add(comboBox);
 		

@@ -10,6 +10,7 @@ import javax.swing.JPasswordField;
 import java.awt.BorderLayout;
 
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JList;
@@ -64,7 +65,10 @@ public class instructorPref {
 	JComboBox comboBox;
 	JComboBox comboBox_1;
 	JComboBox comboBox_2;
+	JList list;
+	DefaultListModel listModel;
 	private void initialize() {
+		listModel = new DefaultListModel();
 		frmSetInstructorPreferences = new JFrame();
 		frmSetInstructorPreferences.setTitle("Set Instructor Preferences");
 		frmSetInstructorPreferences.setBounds(100, 100, 320, 200);
@@ -125,7 +129,7 @@ public class instructorPref {
 		scrollPane.setBounds(10, 25, 150, 100);
 		panel_1.add(scrollPane);
 		
-		JList list = new JList();
+		list = new JList(listModel);
 		scrollPane.setViewportView(list);
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		
@@ -137,6 +141,15 @@ public class instructorPref {
 		
 		JButton btnNewButton = new JButton("Submit");
 		btnNewButton.setBounds(210, 50, 80, 20);
+		btnNewButton.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		if (textField.getText() != null){
+	    			String skill =textField.getText();
+	    			listModel.addElement(skill);
+	    			instructorView.getGroupListing().getPref().addSkill(skill, 10);
+	    		}
+	    	}
+		});
 		panel_1.add(btnNewButton);
 		
 		textField = new JTextField();
@@ -150,6 +163,13 @@ public class instructorPref {
 		
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.setBounds(210, 102, 80, 20);
+		btnDelete.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		if (list.getSelectedValue() != null){
+	    			listModel.remove(list.getSelectedIndex());
+	    		}
+	    	}
+		});
 		panel_1.add(btnDelete);
 		
 		JPanel panel_2 = new JPanel();
