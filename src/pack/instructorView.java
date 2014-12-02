@@ -238,9 +238,17 @@ public class instructorView {
 	    		double v = (double) spinLim.getValue();
 	    		int intV = (int) v;
 	    		groupListing g = getGroupListing();
-	    		
 	    		g.getPref().setSize(intV);
+	    		g = new groupListing(getGroupListing().getClassList(), getGroupListing().getPref());
 	    		setGroupListing(g);
+	    		listModel.clear();
+	    		rdbtnGroup.setSelected(true);
+	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+	    			listModel.addElement(" ");
+	    			listModel.addElement("Group: " + i);
+	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    		}
 	    	}
 		});
 		frmInstructorView.getContentPane().add(btnSet);
