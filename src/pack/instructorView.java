@@ -233,7 +233,7 @@ public class instructorView {
 	    		double v = (double) spinLim.getValue();
 	    		int intV = (int) v;
 	    		groupListing g = getGroupListing();
-	    		classList c = 
+	    		
 	    		g.getPref().setSize(intV);
 	    		setGroupListing(g);
 	    	}
