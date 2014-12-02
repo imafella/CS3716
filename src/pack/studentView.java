@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -99,12 +100,25 @@ public class studentView {
 		frmStudentView.getContentPane().add(btnEditStudentParameters);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(160, 10, 200, 220);
+		scrollPane.setBounds(160, 10, 200, 200);
 		frmStudentView.getContentPane().add(scrollPane);
 		
 		JList list = new JList(listModel);
 		scrollPane.setViewportView(list);
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		
+		JRadioButton rdbtnGroup = new JRadioButton("Group");
+		rdbtnGroup.setBounds(160, 210, 80, 20);
+		frmStudentView.getContentPane().add(rdbtnGroup);
+		
+		JRadioButton rdbtnClass = new JRadioButton("Class");
+		rdbtnClass.setSelected(true);
+		rdbtnClass.setBounds(260, 210, 80, 20);
+		frmStudentView.getContentPane().add(rdbtnClass);
+		
+		ButtonGroup viewer = new ButtonGroup();
+		viewer.add(rdbtnGroup);
+		viewer.add(rdbtnClass);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmStudentView.setJMenuBar(menuBar);
