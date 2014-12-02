@@ -57,6 +57,8 @@ public class studentView {
 	 */
 	static groupListing groupList;
 	DefaultListModel listModel;
+	JRadioButton rdbtnGroup;
+	JRadioButton rdbtnClass;
 	private void initialize() {
 		this.groupList = studentPref.getGroupListing();
 		listModel = new DefaultListModel();
@@ -106,14 +108,38 @@ public class studentView {
 		JList list = new JList(listModel);
 		scrollPane.setViewportView(list);
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+		}
 		
-		JRadioButton rdbtnGroup = new JRadioButton("Group");
-		rdbtnGroup.setBounds(160, 210, 80, 20);
+		rdbtnGroup = new JRadioButton("Group");
+		rdbtnGroup.setBounds(150, 210, 80, 20);
+		rdbtnGroup.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		listModel.clear();
+	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+	    			listModel.addElement(" ");
+	    			listModel.addElement("Group: " + i);
+	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    		}
+	    	}
+		});
 		frmStudentView.getContentPane().add(rdbtnGroup);
 		
-		JRadioButton rdbtnClass = new JRadioButton("Class");
+		rdbtnClass = new JRadioButton("Class");
 		rdbtnClass.setSelected(true);
-		rdbtnClass.setBounds(260, 210, 80, 20);
+		rdbtnClass.setBounds(250, 210, 80, 20);
+		rdbtnClass.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		listModel.clear();
+	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    		}
+	    	}
+		});
 		frmStudentView.getContentPane().add(rdbtnClass);
 		
 		ButtonGroup viewer = new ButtonGroup();
