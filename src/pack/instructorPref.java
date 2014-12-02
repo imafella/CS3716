@@ -142,6 +142,7 @@ public class instructorPref {
 		panel_2.add(lblNewLabel_5);
 		
 		JRadioButton rdbtnRandom = new JRadioButton("Random");
+		rdbtnRandom.setSelected(true);
 		rdbtnRandom.setBounds(10, 25, 80, 20);
 		panel_2.add(rdbtnRandom);
 		
