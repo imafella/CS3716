@@ -178,8 +178,9 @@ public class instructorView {
 	    		groupListing classProject= new groupListing(classList, fiech);
 	    		setGroupListing(classProject);
 	    		
+	    		listModel.clear();
 	    		for(int t = 0; t < classList.getStudents().length; t++){
-	    			listModel.addElement(classList.getStudents()[t].getNumber() + " " + classList.getStudents()[t].getName());
+	    			listModel.addElement("#" + classList.getStudents()[t].getNumber() + " " + classList.getStudents()[t].getName());
 	    		}
 	    		
 	    		for (int t = 0; t < 11; t++){
@@ -276,6 +277,11 @@ public class instructorView {
 		btnMove.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		System.out.println(list_1.getSelectedValue());
+	    		String selected = list_1.getSelectedValue().toString();
+	    		String studentNumb = selected.substring(1, 3);
+	    		int initialGroup = groupList.findStudent(studentNumb);
+	    		System.out.println(studentNumb);
+	    		System.out.println(initialGroup);
 	    	}
 		});
 		frmInstructorView.getContentPane().add(btnMove);
@@ -307,7 +313,7 @@ public class instructorView {
 	    			listModel.addElement(" ");
 	    			listModel.addElement("Group: " + i);
 	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
-	    				listModel.addElement(getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
 	    		}
 	    	}
 		});
@@ -320,7 +326,7 @@ public class instructorView {
 	    		listModel.clear();
 	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
 	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
-	    				listModel.addElement(getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
 	    		}
 	    	}
 		});
