@@ -61,7 +61,9 @@ public class instructorPref {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	
+	JComboBox comboBox;
+	JComboBox comboBox_1;
+	JComboBox comboBox_2;
 	private void initialize() {
 		frmSetInstructorPreferences = new JFrame();
 		frmSetInstructorPreferences.setTitle("Set Instructor Preferences");
@@ -75,17 +77,17 @@ public class instructorPref {
 		tabbedPane.addTab("Deadline", null, panel, null);
 		panel.setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
 		comboBox.setBounds(10, 25, 100, 20);
 		panel.add(comboBox);
 		
-		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1 = new JComboBox();
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
 		comboBox_1.setBounds(130, 25, 60, 20);
 		panel.add(comboBox_1);
 		
-		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2 = new JComboBox();
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050"}));
 		comboBox_2.setBounds(210, 25, 70, 20);
 		panel.add(comboBox_2);
@@ -103,6 +105,15 @@ public class instructorPref {
 		panel.add(lblNewLabel_2);
 		
 		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		String month = (String) comboBox.getSelectedItem();
+	    		String day = (String) comboBox_1.getSelectedItem();
+	    		String year = (String) comboBox_2.getSelectedItem();
+	    		groupListing g = instructorView.getGroupListing();
+	    		g.getPref().setDate(month, day, year);
+	    	}
+		});
 		btnSubmit.setBounds(191, 67, 89, 23);
 		panel.add(btnSubmit);
 		
