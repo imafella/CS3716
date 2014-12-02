@@ -136,7 +136,7 @@ public class groupListing {
 		}
 	}
 	
-	public void estiSort(){
+	public void esteSort(){
 		int i = 0;
 		String student= "";
 		while(getGroups()[0].getStudents().length>0){
