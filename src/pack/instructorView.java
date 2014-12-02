@@ -320,6 +320,7 @@ public class instructorView {
 		frmInstructorView.getContentPane().add(rdbtnGroup);
 		
 		JRadioButton rdbtnClass = new JRadioButton("Class");
+		rdbtnClass.setSelected(true);
 		rdbtnClass.setBounds(250, 210, 80, 20);
 		rdbtnClass.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
