@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JComboBox;
@@ -41,7 +42,14 @@ public class studentPref extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	static groupListing groupList;
+	DefaultComboBoxModel comboModel1;
+	DefaultComboBoxModel comboModel2;
 	public studentPref() {
+		groupList = studentView.getGroupListing();
+		
+		comboModel1 = new DefaultComboBoxModel();
+		comboModel2 = new DefaultComboBoxModel();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 350, 150);
 		contentPane = new JPanel();
@@ -83,11 +91,18 @@ public class studentPref extends JFrame {
 		tabbedPane.addTab("Group Preference", null, panel_1, null);
 		panel_1.setLayout(null);
 		
-		JComboBox comboBox_1 = new JComboBox();
+		for(int i = 0; i < groupList.getGroups().length; i++){
+			for (int j = 0; j < groupList.getGroups()[i].getStudents().length; j++){
+				comboModel1.addElement(getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+			}
+		}
+		JComboBox comboBox_1 = new JComboBox(comboModel1);
 		comboBox_1.setBounds(10, 25, 120, 20);
 		panel_1.add(comboBox_1);
 		
-		JComboBox comboBox_2 = new JComboBox();
+		comboModel2.addElement("Yes");
+		comboModel2.addElement("No");
+		JComboBox comboBox_2 = new JComboBox(comboModel2);
 		comboBox_2.setBounds(150, 25, 60, 20);
 		panel_1.add(comboBox_2);
 		
@@ -119,5 +134,11 @@ public class studentPref extends JFrame {
 		JButton btnFind = new JButton("Find");
 		btnFind.setBounds(220, 10, 90, 20);
 		panel_2.add(btnFind);
+	}
+	public void setGroupListing(groupListing groupList){
+		this.groupList = groupList;
+	}
+	public static groupListing getGroupListing(){
+		return groupList;
 	}
 }

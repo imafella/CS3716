@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
@@ -53,7 +54,12 @@ public class studentView {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	static groupListing groupList;
+	DefaultListModel listModel;
 	private void initialize() {
+		this.groupList = studentPref.getGroupListing();
+		listModel = new DefaultListModel();
+		this.groupList = instructorView.getGroupListing();
 		frmStudentView = new JFrame();
 		frmStudentView.setTitle("Student View");
 		frmStudentView.setBounds(100, 100, 400, 300);
@@ -96,8 +102,7 @@ public class studentView {
 		scrollPane.setBounds(160, 10, 200, 220);
 		frmStudentView.getContentPane().add(scrollPane);
 		
-		
-		JList list = new JList();
+		JList list = new JList(listModel);
 		scrollPane.setViewportView(list);
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		
@@ -108,6 +113,15 @@ public class studentView {
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmLoadClassList = new JMenuItem("Load Class List");
+		mntmLoadClassList.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		for (int i = 0; i < groupList.getGroups().length; i++){
+	    			for (int j = 0; j < groupList.getGroups()[i].getStudents().length; j++){
+	    				listModel.addElement(getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    			}
+	    		}
+	    	}
+		});
 		mnFile.add(mntmLoadClassList);
 		
 		JMenuItem mntmLoadGroups = new JMenuItem("Load Groups");
@@ -128,5 +142,11 @@ public class studentView {
 		JMenuItem mntmEstiban = new JMenuItem("Estiban");
 		mnHelp.add(mntmEstiban);
 		//LOL ESTIBAN
+	}
+	public void setGroupListing(groupListing groupList){
+		this.groupList = groupList;
+	}
+	public static groupListing getGroupListing(){
+		return groupList;
 	}
 }

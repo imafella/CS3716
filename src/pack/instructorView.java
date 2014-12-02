@@ -72,7 +72,7 @@ public class instructorView {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	groupListing groupList;
+	static groupListing groupList;
 	JList list_1;
 	DefaultListModel listModel;
 	SpinnerNumberModel spinLim;
@@ -233,6 +233,7 @@ public class instructorView {
 	    		double v = (double) spinLim.getValue();
 	    		int intV = (int) v;
 	    		groupListing g = getGroupListing();
+	    		classList c = 
 	    		g.getPref().setSize(intV);
 	    		setGroupListing(g);
 	    	}
@@ -332,7 +333,7 @@ public class instructorView {
 	public void setGroupListing(groupListing groupList){
 		this.groupList = groupList;
 	}
-	public groupListing getGroupListing(){
+	public static groupListing getGroupListing(){
 		return groupList;
 	}
 }
