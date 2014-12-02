@@ -2,13 +2,13 @@ package pack;
 
 public class preferences {
 	int size;
-	String[][] skills;
+	String[] skills;
 	String[] date= {"", "", ""};
 	String method;
 	
 	public preferences(){
 		size= 2;
-		skills= new String[][]{{}};
+		skills= new String[] {};
 		date[0]= "July"; date[1]="12"; date[2]="13";
 		method= "RANDOM";
 		
@@ -16,7 +16,7 @@ public class preferences {
 	
 	public preferences(int size){
 		this.size= size;
-		skills= new String[][]{{}};
+		skills= new String[] {};
 		date[0]= "July"; date[1]="12"; date[2]="13";
 		method= "RANDOM";
 	}
@@ -39,21 +39,20 @@ public class preferences {
 		return size;
 	}
 	
-	public void addSkill(String skill, int scaleMax){
-		skills[skills.length][0]= skill;
-		skills[skills.length][1]= Integer.toString(scaleMax);
+	public void addSkill(String skill){
+		skills[skills.length]= skill;
+		
 	}
 	
-	public String[][] getSkills(){
+	public String[] getSkills(){
 		return skills;
 	}
 	
 	public void removeSkill(String skill){
-		String[][] temp=null;
+		String[] temp= new String[] {};
 		for(int i =0; i<getSkills().length; i++){
-			if(!skill.equals(getSkills()[i][0])){
-				temp[temp.length-1][0]= getSkills()[i][0];
-				temp[temp.length-1][1]= getSkills()[i][1];
+			if(!skill.equals(getSkills()[i])){
+				temp[temp.length-1]= getSkills()[i];
 			}
 		}
 		skills =temp;
