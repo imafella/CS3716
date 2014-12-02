@@ -23,7 +23,7 @@ public class studentArray {
 	public void deleteStudent(String number) {
 		int count = 0;
 		for (int i = 0; i < studentArray.length; i++){
-			if (studentArray[i].getNumber() == number){
+			if (studentArray[i].getNumber().equals(number)){
 				count++;
 			}
 		}
