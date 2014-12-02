@@ -126,18 +126,6 @@ public class studentView {
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
-		JMenuItem mntmLoadClassList = new JMenuItem("Load Class List");
-		mntmLoadClassList.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		for (int i = 0; i < groupList.getGroups().length; i++){
-	    			for (int j = 0; j < groupList.getGroups()[i].getStudents().length; j++){
-	    				listModel.addElement(getGroupListing().getGroups()[i].getStudents()[j].getName());
-	    			}
-	    		}
-	    	}
-		});
-		mnFile.add(mntmLoadClassList);
-		
 		JMenuItem mntmLoadGroups = new JMenuItem("Load Groups");
 		mnFile.add(mntmLoadGroups);
 		
@@ -155,7 +143,6 @@ public class studentView {
 		
 		JMenuItem mntmEstiban = new JMenuItem("Estiban");
 		mnHelp.add(mntmEstiban);
-		//LOL ESTIBAN
 	}
 	public void setGroupListing(groupListing groupList){
 		this.groupList = groupList;
