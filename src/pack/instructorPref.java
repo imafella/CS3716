@@ -33,6 +33,7 @@ import javax.swing.DefaultComboBoxModel;
 public class instructorPref {
 
 	private JFrame frmSetInstructorPreferences;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -110,7 +111,7 @@ public class instructorPref {
 		panel_1.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 25, 200, 100);
+		scrollPane.setBounds(10, 25, 150, 100);
 		panel_1.add(scrollPane);
 		
 		JList list = new JList();
@@ -118,21 +119,27 @@ public class instructorPref {
 		list.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		
 		SpinnerNumberModel spinLim= new SpinnerNumberModel(1.0, 1.0, 100.0, 1.0 );
-		JSpinner spinner = new JSpinner(spinLim);
-		spinner.setBounds(215, 25, 40, 20);
-		panel_1.add(spinner);
 		
 		JLabel lblNewLabel_3 = new JLabel("Skills");
 		lblNewLabel_3.setBounds(10, 10, 60, 15);
 		panel_1.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Skill Level");
-		lblNewLabel_4.setBounds(215, 10, 80, 15);
-		panel_1.add(lblNewLabel_4);
-		
 		JButton btnNewButton = new JButton("Submit");
-		btnNewButton.setBounds(215, 60, 80, 20);
+		btnNewButton.setBounds(210, 50, 80, 20);
 		panel_1.add(btnNewButton);
+		
+		textField = new JTextField();
+		textField.setBounds(165, 25, 125, 20);
+		panel_1.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblAddSkill = new JLabel("Add Skill");
+		lblAddSkill.setBounds(165, 10, 80, 14);
+		panel_1.add(lblAddSkill);
+		
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.setBounds(210, 102, 80, 20);
+		panel_1.add(btnDelete);
 		
 		JPanel panel_2 = new JPanel();
 		tabbedPane.addTab("Sort Method", null, panel_2, null);
