@@ -4,7 +4,7 @@ public class studentArray {
 	student[] studentArray;
 
 	public studentArray() {
-		studentArray = new student[0] ;
+		studentArray = new student[] {};
 	}
 
 	public studentArray(student[] x) {
@@ -32,7 +32,7 @@ public class studentArray {
 			int j = 0;
 			for (int i = 0; i < studentArray.length; i++) {
 
-				if (studentArray[i].getNumber() != number) {
+				if (!(studentArray[i].getNumber().equals(number))) {
 					result[j] = studentArray[i];
 					j++;
 				}
