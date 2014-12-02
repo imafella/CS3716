@@ -62,6 +62,11 @@ public class student {
 		return grades;
 	}
 	
+	public void setGrades(String[][] x){
+		grades=x;
+			
+	}
+	
 	public double getGPA(){
 		double gpa= 0.0;
 		String[][] grades= getGrades();
@@ -92,6 +97,7 @@ public class student {
 		}
 
 	}
+	
 
 	public String[][] getStuPreference() {
 		return stuPreference;

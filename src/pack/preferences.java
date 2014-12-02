@@ -47,6 +47,17 @@ public class preferences {
 		return skills;
 	}
 	
+	public void removeSkill(String skill){
+		String[][] temp=null;
+		for(int i =0; i<getSkills().length; i++){
+			if(!skill.equals(getSkills()[i][0])){
+				temp[temp.length-1][0]= getSkills()[i][0];
+				temp[temp.length-1][1]= getSkills()[i][1];
+			}
+		}
+		skills =temp;
+	}
+	
 	public void setDate(String month, String day, String time){
 		date[0]= month; date[1]= day; date[2]= time;
 	}
