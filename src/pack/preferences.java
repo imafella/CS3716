@@ -8,7 +8,7 @@ public class preferences {
 	
 	public preferences(){
 		size= 2;
-		skills= new String[] {"Java"};
+		skills= new String[] {};
 		date[0]= "July"; date[1]="12"; date[2]="13";
 		method= "RANDOM";
 		
@@ -16,7 +16,7 @@ public class preferences {
 	
 	public preferences(int size){
 		this.size= size;
-		skills= new String[] {"Java"};
+		skills= new String[] {};
 		date[0]= "July"; date[1]="12"; date[2]="13";
 		method= "RANDOM";
 	}
@@ -40,7 +40,12 @@ public class preferences {
 	}
 	
 	public void addSkill(String skill){
-		skills[skills.length]= skill;
+		String[] temp = new String[skills.length + 1];
+		for (int i = 0; i < skills.length; i++){
+			temp[i] = skills[i];
+		}
+		temp[skills.length] = skill;
+		skills = temp;
 		
 	}
 	

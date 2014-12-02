@@ -147,7 +147,7 @@ public class instructorPref {
 	    			String skill =textField.getText();
 	    			listModel.addElement(skill);
 	    			System.out.println(skill);
-	    			//instructorView.getGroupListing().getPref().addSkill(skill, 10);
+	    			instructorView.getGroupListing().getPref().addSkill(skill);
 	    		}
 	    	}
 		});
