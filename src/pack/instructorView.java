@@ -327,7 +327,14 @@ public class instructorView {
                 int dialogButton = JOptionPane.YES_NO_OPTION;
                 int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to empty the current group listing?","Warning",dialogButton);
                 if(dialogResult == JOptionPane.YES_OPTION){
-                	System.out.println("YES");
+                	groupList.clearGroups();
+    	    		listModel.clear();
+    	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+    	    			listModel.addElement(" ");
+    	    			listModel.addElement("Group: " + i);
+    	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+    	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+    	    		}
                 }
 	    	}
 		});
