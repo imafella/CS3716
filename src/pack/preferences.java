@@ -8,7 +8,7 @@ public class preferences {
 	
 	public preferences(){
 		size= 2;
-		skills= null;
+		skills= new  String[0][0];
 		date[0]= "July"; date[1]="12"; date[2]="13";
 		method= "RANDOM";
 		
