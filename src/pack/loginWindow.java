@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -40,6 +41,7 @@ public class loginWindow extends JFrame {
 	 * Create the frame.
 	 */
 	ButtonGroup btnGroup;
+	
 	public loginWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 200, 200);
@@ -77,7 +79,10 @@ public class loginWindow extends JFrame {
 	    			instructorView.main(new String []{});
 	    		}
 	    		else{
-	    			studentView.main(new String []{});
+	    			if(instructorView.getGroupListing() != null)
+	    				studentView.main(new String []{});
+	    			else
+	    				JOptionPane.showMessageDialog(null, "No available projects.");
 	    		}
 	    	}
 	    });
@@ -90,5 +95,4 @@ public class loginWindow extends JFrame {
 	public ButtonGroup getBtnGroup(){
 		return btnGroup;
 	}
-
 }
