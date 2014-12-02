@@ -8,7 +8,7 @@ public class preferences {
 	
 	public preferences(){
 		size= 2;
-		skills= new  String[0][0];
+		skills= new String[][]{{}};
 		date[0]= "July"; date[1]="12"; date[2]="13";
 		method= "RANDOM";
 		
@@ -16,7 +16,7 @@ public class preferences {
 	
 	public preferences(int size){
 		this.size= size;
-		skills= new  String[0][0];
+		skills= new String[][]{{}};
 		date[0]= "July"; date[1]="12"; date[2]="13";
 		method= "RANDOM";
 	}
