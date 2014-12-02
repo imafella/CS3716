@@ -74,7 +74,7 @@ public class groupListing {
 	}
 	
 	public void moveStudent(String number, int initialGroup, int targetGroup){
-		if(checkStudent(number, initialGroup)&&(sizeCheck(targetGroup))){
+		if(checkStudent(number, initialGroup)&&((targetGroup==0)||(sizeCheck(targetGroup)))){
 			int size= getGroups()[initialGroup].getStudents().length;
 			student x;
 			student[] initial =getGroups()[initialGroup].getStudents();
