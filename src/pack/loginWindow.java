@@ -59,6 +59,7 @@ public class loginWindow extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JRadioButton rdbtnInstructor = new JRadioButton("Instructor");
+		rdbtnInstructor.setSelected(true);
 		rdbtnInstructor.setBounds(10, 80, 100, 20);
 		rdbtnInstructor.setActionCommand("Instructor");
 		contentPane.add(rdbtnInstructor);
