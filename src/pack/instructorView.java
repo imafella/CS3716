@@ -77,6 +77,9 @@ public class instructorView {
 	DefaultListModel listModel;
 	SpinnerNumberModel spinLim;
 	DefaultComboBoxModel comboModel;
+	JComboBox comboBox;
+	JRadioButton rdbtnClass;
+	JRadioButton rdbtnGroup;
 	private void initialize() {
 		listModel = new DefaultListModel();
 		spinLim = new SpinnerNumberModel(2.0, 2.0, 100.0, 1.0 );
@@ -179,6 +182,7 @@ public class instructorView {
 	    		setGroupListing(classProject);
 	    		
 	    		listModel.clear();
+	    		rdbtnClass.setSelected(true);
 	    		for(int t = 0; t < classList.getStudents().length; t++){
 	    			listModel.addElement("#" + classList.getStudents()[t].getNumber() + " " + classList.getStudents()[t].getName());
 	    		}
@@ -268,7 +272,7 @@ public class instructorView {
 		scrollPane.setViewportView(list_1);
 		list_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		
-		JComboBox comboBox = new JComboBox(comboModel);
+		comboBox = new JComboBox(comboModel);
 		comboBox.setBounds(340, 30, 120, 20);
 		frmInstructorView.getContentPane().add(comboBox);
 		
@@ -280,8 +284,16 @@ public class instructorView {
 	    		String selected = list_1.getSelectedValue().toString();
 	    		String studentNumb = selected.substring(1, 3);
 	    		int initialGroup = groupList.findStudent(studentNumb);
-	    		System.out.println(studentNumb);
-	    		System.out.println(initialGroup);
+	    		int newGroup = comboBox.getSelectedIndex();
+	    		groupList.moveStudent(studentNumb, initialGroup, newGroup);
+	    		listModel.clear();
+	    		rdbtnGroup.setSelected(true);
+	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
+	    			listModel.addElement(" ");
+	    			listModel.addElement("Group: " + i);
+	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    		}
 	    	}
 		});
 		frmInstructorView.getContentPane().add(btnMove);
@@ -304,7 +316,7 @@ public class instructorView {
 		});
 		frmInstructorView.getContentPane().add(btnNewButton);
 		
-		JRadioButton rdbtnGroup = new JRadioButton("Group");
+		rdbtnGroup = new JRadioButton("Group");
 		rdbtnGroup.setBounds(150, 210, 80, 20);
 		rdbtnGroup.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
@@ -319,7 +331,7 @@ public class instructorView {
 		});
 		frmInstructorView.getContentPane().add(rdbtnGroup);
 		
-		JRadioButton rdbtnClass = new JRadioButton("Class");
+		rdbtnClass = new JRadioButton("Class");
 		rdbtnClass.setSelected(true);
 		rdbtnClass.setBounds(250, 210, 80, 20);
 		rdbtnClass.addActionListener(new ActionListener() {
