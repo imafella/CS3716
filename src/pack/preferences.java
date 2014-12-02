@@ -16,6 +16,7 @@ public class preferences {
 	
 	public preferences(int size){
 		this.size= size;
+		skills= new  String[0][0];
 		date[0]= "July"; date[1]="12"; date[2]="13";
 		method= "RANDOM";
 	}
