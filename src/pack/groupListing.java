@@ -82,7 +82,9 @@ public class groupListing {
 				if(initial[i].getNumber()== number){
 					x= getGroups()[initialGroup].getStudents()[i];
 					getGroups()[initialGroup].deleteStudent(number);
+					x.setGroupNum(targetGroup);
 					getGroups()[targetGroup].addStudent(x);
+					
 				}
 			}
 			

@@ -7,6 +7,7 @@ public class student {
 	String[][] grades;
 	String[][] profPreference;
 	String[][] stuPreference;
+	int groupNum;
 
 	public student() {
 		name = "";
@@ -15,6 +16,7 @@ public class student {
 		profPreference = null;
 		stuPreference = null;
 		schedule= new schedule();
+		groupNum=0;
 	}
 	
 	public student(String name, String number){
@@ -24,6 +26,7 @@ public class student {
 		profPreference = null;
 		stuPreference = null;
 		schedule= new schedule();
+		groupNum=0;
 	}
 
 	public student(String name, String number, String[][] grades) {
@@ -33,6 +36,7 @@ public class student {
 		profPreference = null;
 		stuPreference = null;
 		schedule= new schedule();
+		groupNum=0;
 
 	}
 
@@ -46,6 +50,14 @@ public class student {
 		return number;
 	}
 
+	public int getGroupNum(){
+		return groupNum;
+	}
+	
+	public void setGroupNum(int i){
+		groupNum= i;
+	}
+	
 	public String[][] getGrades() {
 		return grades;
 	}
