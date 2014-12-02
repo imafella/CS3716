@@ -57,7 +57,7 @@ public class groupListing {
 		int size= getGroups()[initialGroup].getStudents().length;
 		student[] initial =getGroups()[initialGroup].getStudents();
 		for(int i=0; i<size; i++){
-			if(initial[i].getNumber()== Number){
+			if(initial[i].getNumber().equals(Number)){
 				return true;
 			}
 		}
