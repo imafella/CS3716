@@ -114,10 +114,9 @@ public class groupListing {
 	
 	public void clearGroups(){
 		for(int i=1; i<getGroups().length; i++){
-			for(int j = 0; j< getGroups()[i].getStudents().length; j++){
-				getGroups()[0].addStudent(getGroups()[i].getStudents()[j]);
+			for(int j = getGroups()[i].getStudents().length-1; j >= 0; j--){
+				moveStudent(getGroups()[i].getStudents()[j].getNumber(), i, 0);
 			}
-			getGroups()[i]= new studentArray();
 		}
 	}
 	
