@@ -3,17 +3,13 @@ CS3716
 
 To view the planed Architexture, please view the Plans folder. (This includes the iteration plan)
 
+There are images in the 3716 sub folder.
+
 To view the current java workings, please view src/pack folder.
 
-UseCaseDiagram is located in CS3716/3716
 
-To run the run.java you will need the following:
-  run.java, 
-  groupListing.java, 
-  student.java, 
-  studentArray.java, 
-  schedule.java, 
-  package-info.java, 
-  
-To run use the run.java
+To run the program use the loginWindow.java.
+
+esteSort() was named after Esteban , Thanks to your comments we had what we ended up with. Hope you have a safe flight.
+
   
