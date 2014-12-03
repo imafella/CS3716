@@ -258,6 +258,7 @@ public class instructorView {
 	    	public void actionPerformed(ActionEvent e) {
 	    		double v = (double) spinLim.getValue();
 	    		int intV = (int) v;
+	    		groupList.clearGroups();
 	    		groupListing g = getGroupListing();
 	    		g.getPref().setSize(intV);
 	    		g = new groupListing(getGroupListing().getClassList(), getGroupListing().getPref());
