@@ -313,7 +313,11 @@ public class instructorView {
 		frmInstructorView.getContentPane().add(btnEditPreferences);
 		btnEditPreferences.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				instructorPref.main(new String []{});
+				if(!listModel.isEmpty())
+					instructorPref.main(new String []{});
+				else
+					JOptionPane.showMessageDialog(null, "Please load class list");
+				
 			}
 		});
 		
