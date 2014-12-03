@@ -1,9 +1,10 @@
 package pack;
 
 import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
 
+import javax.swing.*;
+
+import java.awt.event.*;
 import java.awt.EventQueue;
 
 import javax.swing.DefaultListModel;
@@ -23,6 +24,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JButton;
 import javax.swing.JList;
@@ -324,19 +326,33 @@ public class instructorView {
 		btnMove.setBounds(360, 60, 80, 20);
 		btnMove.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		System.out.println(list_1.getSelectedValue());
-	    		String selected = list_1.getSelectedValue().toString();
-	    		String studentNumb = selected.substring(1, 3);
-	    		int initialGroup = groupList.findStudent(studentNumb);
-	    		int newGroup = comboBox.getSelectedIndex();
-	    		groupList.moveStudent(studentNumb, initialGroup, newGroup);
-	    		listModel.clear();
-	    		rdbtnGroup.setSelected(true);
-	    		for(int i = 0; i < getGroupListing().getGroups().length; i++){
-	    			listModel.addElement(" ");
-	    			listModel.addElement("Group: " + i);
-	    			for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
-	    				listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+	    		if(list_1.getSelectedValue() != null){
+	    			String selected = list_1.getSelectedValue().toString();
+	    			if(selected.length() > 2) {
+	    				String studentNumb = selected.substring(1, 3);
+		    			if(!studentNumb.equals("ro")){
+		    				int initialGroup = groupList.findStudent(studentNumb);
+		    				int newGroup = comboBox.getSelectedIndex();
+		    				groupList.moveStudent(studentNumb, initialGroup, newGroup);
+		    				listModel.clear();
+		    				rdbtnGroup.setSelected(true);
+		    				for(int i = 0; i < getGroupListing().getGroups().length; i++){
+		    					listModel.addElement(" ");
+		    					listModel.addElement("Group: " + i);
+		    					for (int j = 0; j < getGroupListing().getGroups()[i].getStudents().length; j++)
+		    						listModel.addElement("#" + getGroupListing().getGroups()[i].getStudents()[j].getNumber() + " " + getGroupListing().getGroups()[i].getStudents()[j].getName());
+		    				}
+		    			}
+		    			else{
+			    			JOptionPane.showMessageDialog(null, "Please select a student from the list.");
+		    			}
+		    		}
+	    			else{
+		    			JOptionPane.showMessageDialog(null, "Please select a student from the list.");
+	    			}
+	    		}
+	    		else{
+	    			JOptionPane.showMessageDialog(null, "Please select a student from the list.");
 	    		}
 	    	}
 		});
