@@ -143,8 +143,8 @@ public class instructorPref {
 		btnNewButton.setBounds(210, 50, 80, 20);
 		btnNewButton.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    		if (textField.getText() != null){
-	    			String skill =textField.getText();
+	    		if (!textField.getText().equals("")){
+	    			String skill = textField.getText();
 	    			listModel.addElement(skill);
 	    			instructorView.getGroupListing().getPref().addSkill(skill);
 	    		}
