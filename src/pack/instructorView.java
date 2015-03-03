@@ -180,7 +180,7 @@ public class instructorView {
 	    		classList.addStudent(o);
 	    		
 	    		String[][] g16 = {{"1710", "4.0"},{"2710", "4.0"},{"2711", "4.0"}};
-	    		student p = new student("Jesus", "16");
+	    		student p = new student("Jib", "16");
 	    		p.setGrades(g16);
 	    		classList.addStudent(p);
 	    		
